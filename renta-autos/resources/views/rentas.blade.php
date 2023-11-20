@@ -246,9 +246,9 @@
 
 
             <h4 class="py-3 mb-4">
-            <span class="text-muted fw-light">Panel de Vehículos</span>
+              <span class="text-muted fw-light">Panel de Rentas</span>
               <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#crearVehiculoModal">
-                <i class="ti ti-plus"></i> Agregar Vehículo
+                <i class="ti ti-plus"></i> Agregar Renta
               </button>
             </h4>
 
@@ -259,81 +259,89 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Imagen</th>
-                      <th>Placa</th>
-                      <th>Modelo</th>
-                      <th>Marca</th>
-                      <th>Categoria</th>
-                      <th>Estado</th>
+                      <th>Nombre</th>
+                      <th>Vehiculo</th>
+                      <th>Fecha_inicio</th>
+                      <th>Fecha_fin</th>
+                      <th>Deposito</th>
+                      <th>Teléfono</th>
                       <th>Acciones</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td><img src="imagen1.jpg" alt="Imagen 1" width="50"></td>
-                      <td>ABC123</td>
-                      <td>Civic</td>
-                      <td>Honda</td>
-                      <td>Sedán</td>
-                      <td><span class="badge bg-label-danger me-1">Ocupado</span></td>
+                      <td>Juan Pérez</td>
+                      <td>Chevrolet Camaro</td>
+                      <td>2023-01-01</td>
+                      <td>2023-01-31</td>
+                      <td>$500</td>
+                      <td>612-345-6789</td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i> Editar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i> Eliminar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i>
+                              Editar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i>
+                              Eliminar</a>
                           </div>
                         </div>
                       </td>
                     </tr>
                     <tr>
                       <td>2</td>
-                      <td><img src="imagen2.jpg" alt="Imagen 2" width="50"></td>
-                      <td>XYZ789</td>
-                      <td>Accord</td>
-                      <td>Honda</td>
-                      <td>Sedán</td>
-                      <td><span class="badge bg-label-success me-1">Disponible</span></td>
+                      <td>María López</td>
+                      <td>Ford Mustang</td>
+                      <td>2023-02-01</td>
+                      <td>2023-02-28</td>
+                      <td>$600</td>
+                      <td>612-987-6543</td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i> Editar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i> Eliminar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i>
+                              Editar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i>
+                              Eliminar</a>
                           </div>
                         </div>
                       </td>
                     </tr>
                     <tr>
                       <td>3</td>
-                      <td><img src="imagen3.jpg" alt="Imagen 3" width="50"></td>
-                      <td>123ABC</td>
-                      <td>Camry</td>
-                      <td>Toyota</td>
-                      <td>Sedán</td>
-                      <td><span class="badge bg-label-danger me-1">Ocupado</span></td>
+                      <td>Carlos Rodríguez</td>
+                      <td>Toyota Corolla</td>
+                      <td>2023-03-01</td>
+                      <td>2023-03-31</td>
+                      <td>$700</td>
+                      <td>612-111-2222</td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i> Editar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i> Eliminar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i>
+                              Editar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i>
+                              Eliminar</a>
                           </div>
                         </div>
                       </td>
                     </tr>
                   </tbody>
-                </table>
                 </table>
               </div>
             </div>
