@@ -18,6 +18,14 @@ Route::get('/rentas', function () {
     return view('rentas');
 });
 
+Route::get('/marcas', function () {
+    return view('marcas');
+});
+
+Route::get('/categorias', function () {
+    return view('categorias');
+});
+
 Route::get('/log-out', function () {
     return view('login');
 });
