@@ -246,8 +246,8 @@
 
 
             <h4 class="py-3 mb-4">
-            <span class="text-muted fw-light">Panel de Vehículos</span>
-              <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#crearVehiculoModal">
+              <span class="text-muted fw-light">Panel de Vehículos</span>
+              <button class="btn btn-success" data-bs-toggle="" data-bs-target="">
                 <i class="ti ti-plus"></i> Agregar Vehículo
               </button>
             </h4>
@@ -283,9 +283,12 @@
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i> Editar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i> Eliminar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i>
+                              Editar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i>
+                              Eliminar</a>
                           </div>
                         </div>
                       </td>
@@ -304,9 +307,12 @@
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i> Editar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i> Eliminar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i>
+                              Editar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i>
+                              Eliminar</a>
                           </div>
                         </div>
                       </td>
@@ -325,9 +331,12 @@
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i> Editar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i> Eliminar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i>
+                              Editar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i>
+                              Eliminar</a>
                           </div>
                         </div>
                       </td>

@@ -174,7 +174,6 @@
               </li>
               <!-- / Style Switcher-->
 
-              <!-- User -->
               <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                   <div class="avatar avatar-online">
@@ -220,7 +219,6 @@
                   </li>
                 </ul>
               </li>
-              <!--/ User -->
             </ul>
           </div>
 
@@ -246,10 +244,10 @@
 
 
             <h4 class="py-3 mb-4">
-            <span class="text-muted fw-light">Panel de Marcas</span>
-              <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#crearVehiculoModal">
+              <span class="text-muted fw-light">Panel de Marcas</span>
+              <button class="btn btn-success" data-bs-toggle="" data-bs-target="">
                 <i class="ti ti-plus"></i> Agregar Marca
-              </button> 
+              </button>
             </h4>
 
             <!-- Basic Bootstrap Table -->
@@ -273,9 +271,12 @@
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i> Editar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i> Eliminar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i>
+                              Editar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i>
+                              Eliminar</a>
                           </div>
                         </div>
                       </td>
@@ -289,9 +290,12 @@
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i> Editar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i> Eliminar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i>
+                              Editar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i>
+                              Eliminar</a>
                           </div>
                         </div>
                       </td>
@@ -305,9 +309,12 @@
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i> Editar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i> Eliminar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i>
+                              Editar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i>
+                              Eliminar</a>
                           </div>
                         </div>
                       </td>

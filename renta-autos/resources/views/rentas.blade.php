@@ -247,7 +247,7 @@
 
             <h4 class="py-3 mb-4">
               <span class="text-muted fw-light">Panel de Rentas</span>
-              <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#crearVehiculoModal">
+              <button class="btn btn-success" data-bs-toggle="" data-bs-target="">
                 <i class="ti ti-plus"></i> Agregar Renta
               </button>
             </h4>

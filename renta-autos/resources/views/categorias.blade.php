@@ -247,7 +247,7 @@
 
             <h4 class="py-3 mb-4">
               <span class="text-muted fw-light">Panel de Categorias</span>
-              <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#crearVehiculoModal">
+              <button class="btn btn-success" data-bs-toggle="" data-bs-target="">
                 <i class="ti ti-plus"></i> Agregar Categoria
               </button>
             </h4>
@@ -273,9 +273,12 @@
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i> Editar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i> Eliminar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i>
+                              Editar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i>
+                              Eliminar</a>
                           </div>
                         </div>
                       </td>
@@ -289,9 +292,12 @@
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i> Editar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i> Eliminar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i>
+                              Editar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i>
+                              Eliminar</a>
                           </div>
                         </div>
                       </td>
@@ -305,9 +311,12 @@
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i> Editar</a>
-                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i> Eliminar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i
+                                class="menu-icon tf-icons ti ti-file-description"></i> Consultar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-pencil me-2"></i>
+                              Editar</a>
+                            <a class="dropdown-item" href="javascript:void(0);"><i class="ti ti-trash me-2"></i>
+                              Eliminar</a>
                           </div>
                         </div>
                       </td>
@@ -316,17 +325,17 @@
                 </table>
               </div>
             </div>
+          </div>
+          <div class="content-backdrop fade"></div>
         </div>
-        <div class="content-backdrop fade"></div>
       </div>
     </div>
-  </div>
 
-  <!-- Overlay -->
-  <div class="layout-overlay layout-menu-toggle"></div>
+    <!-- Overlay -->
+    <div class="layout-overlay layout-menu-toggle"></div>
 
-  <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-  <div class="drag-target"></div>
+    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+    <div class="drag-target"></div>
 
   </div>
   <!-- / Layout wrapper -->
