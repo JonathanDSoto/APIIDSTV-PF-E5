@@ -245,7 +245,8 @@
                 <div class="content-wrapper">
                     <!-- Content -->
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="py-3 mb-4"><span class="text-muted fw-light"></span> Agregar Cliente</h4>
+                        <button type="button" class="btn btn-success me-sm-2 me-1" data-bs-toggle="modal"
+                            data-bs-target="#agregarClienteModal">Agregar Cliente</button>
                         <div class="col-xxl">
                             <div class="card mb-4">
                                 <form class="card-body">
@@ -308,6 +309,8 @@
     <!-- / Layout wrapper -->
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
+
+    <!-- Modal -->
 
     <script src="assets/vendor/libs/jquery/jquery.js"></script>
     <script src="assets/vendor/libs/popper/popper.js"></script>

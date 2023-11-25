@@ -246,10 +246,9 @@
 
 
             <h4 class="py-3 mb-4">
-              <span class="text-muted fw-light">Panel de Categorias</span>
-              <button class="btn btn-success" data-bs-toggle="" data-bs-target="">
-                <i class="ti ti-plus"></i> Agregar Categoria
-              </button>
+              <span class="text-muted fw-light">Panel de Categorías</span>
+              <button type="button" class="btn btn-success float-end me-sm-2 me-1" data-bs-toggle="modal"
+                data-bs-target="#agregarCategoria"><i class="ti ti-plus"></i>Agregar Categoría</button>
             </h4>
 
             <!-- Basic Bootstrap Table -->
@@ -331,16 +330,36 @@
       </div>
     </div>
 
-    <!-- Overlay -->
+    <!-- Modal -->
+    <div class="modal fade" id="agregarCategoria" tabindex="-1" role="dialog" aria-labelledby="form-categorias"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="form-categorias">Agregar Categoria</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="card-body">
+              <div class="row mb-3">
+                <label class="col-sm-3 col-form-label text-sm-end" for="categoria-nombre">Nombre de la Categoria</label>
+                <div class="col-sm-9">
+                  <input type="text" id="categoria-nombre" class="form-control" placeholder="Nombre de la Categoria" />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success">Agregar Categoria</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="layout-overlay layout-menu-toggle"></div>
-
-    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
     <div class="drag-target"></div>
-
   </div>
-  <!-- / Layout wrapper -->
-  <!-- Core JS -->
-  <!-- build:js assets/vendor/js/core.js -->
 
   <script src="assets/vendor/libs/jquery/jquery.js"></script>
   <script src="assets/vendor/libs/popper/popper.js"></script>

@@ -247,9 +247,8 @@
 
             <h4 class="py-3 mb-4">
               <span class="text-muted fw-light">Panel de Rentas</span>
-              <button class="btn btn-success" data-bs-toggle="" data-bs-target="">
-                <i class="ti ti-plus"></i> Agregar Renta
-              </button>
+              <button type="button" class="btn btn-success float-end me-sm-2 me-1" data-bs-toggle="modal"
+                data-bs-target="#agregarRenta"><i class="ti ti-plus"></i>Agregar Renta</button>
             </h4>
 
             <!-- Basic Bootstrap Table -->
@@ -352,16 +351,70 @@
     </div>
   </div>
 
-  <!-- Overlay -->
-  <div class="layout-overlay layout-menu-toggle"></div>
-
-  <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-  <div class="drag-target"></div>
-
+  <!-- Modal -->
+  <div class="modal fade" id="agregarRenta" tabindex="-1" role="dialog" aria-labelledby="form-rentas"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="form-rentas">Agregar Renta</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="card-body" id="form-renta">
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label text-sm-end" for="renta-nombre">Nombre del
+                Cliente</label>
+              <div class="col-sm-9">
+                <input type="text" id="renta-nombre" class="form-control" placeholder="Nombre del Cliente" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label text-sm-end" for="renta-vehiculo">Vehículo</label>
+              <div class="col-sm-9">
+                <input type="text" id="renta-vehiculo" class="form-control" placeholder="Vehículo" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label text-sm-end" for="renta-fecha-inicio">Fecha de Inicio</label>
+              <div class="col-sm-9">
+                <input type="date" id="renta-fecha-inicio" class="form-control" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label text-sm-end" for="renta-fecha-fin">Fecha
+                de Fin</label>
+              <div class="col-sm-9">
+                <input type="date" id="renta-fecha-fin" class="form-control" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label text-sm-end" for="renta-deposito">Depósito</label>
+              <div class="col-sm-9">
+                <input type="number" id="renta-deposito" class="form-control" placeholder="Depósito" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label text-sm-end" for="renta-telefono">Teléfono</label>
+              <div class="col-sm-9">
+                <input type="tel" id="renta-telefono" class="form-control" placeholder="Teléfono" />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-success">Agregar Renta</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-  <!-- / Layout wrapper -->
-  <!-- Core JS -->
-  <!-- build:js assets/vendor/js/core.js -->
+
+
+  <div class="layout-overlay layout-menu-toggle"></div>
+  <div class="drag-target"></div>
+  </div>
+
 
   <script src="assets/vendor/libs/jquery/jquery.js"></script>
   <script src="assets/vendor/libs/popper/popper.js"></script>

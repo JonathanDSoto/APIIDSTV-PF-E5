@@ -247,9 +247,8 @@
 
             <h4 class="py-3 mb-4">
               <span class="text-muted fw-light">Panel de Clientes</span>
-              <button class="btn btn-success" data-bs-toggle="" data-bs-target="">
-                <i class="ti ti-plus"></i> Agregar Cliente
-              </button>
+              <button  type="button" class="btn btn-success float-end me-sm-2 me-1" data-bs-toggle="modal"
+              data-bs-target="#agregarCliente"><i class="ti ti-plus"></i>Agregar Cliente</button>
             </h4>
 
             <!-- Basic Bootstrap Table -->
@@ -348,16 +347,56 @@
     </div>
   </div>
 
-  <!-- Overlay -->
-  <div class="layout-overlay layout-menu-toggle"></div>
-
-  <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-  <div class="drag-target"></div>
-
+  <!-- Modal -->
+  <div class="modal fade" id="agregarCliente" tabindex="-1" role="dialog" aria-labelledby="form-clientes"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="form-clientes">Agregar Cliente</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="card-body">
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label text-sm-end" for="cliente-nombre">Nombre</label>
+              <div class="col-sm-9">
+                <input type="text" id="cliente-nombre" class="form-control" placeholder="Nombre del Cliente" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label text-sm-end" for="cliente-email">Correo
+                Electrónico</label>
+              <div class="col-sm-9">
+                <input type="email" id="cliente-email" class="form-control" placeholder="Correo Electrónico" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label text-sm-end" for="cliente-telefono">Teléfono</label>
+              <div class="col-sm-9">
+                <input type="tel" id="cliente-telefono" class="form-control" placeholder="Número de Teléfono" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label text-sm-end" for="cliente-direccion">Dirección</label>
+              <div class="col-sm-9">
+                <textarea id="cliente-direccion" class="form-control" placeholder="Dirección"></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-success">Agregar Cliente</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-  <!-- / Layout wrapper -->
-  <!-- Core JS -->
-  <!-- build:js assets/vendor/js/core.js -->
+
+
+  <div class="layout-overlay layout-menu-toggle"></div>
+  <div class="drag-target"></div>
+  </div>
 
   <script src="assets/vendor/libs/jquery/jquery.js"></script>
   <script src="assets/vendor/libs/popper/popper.js"></script>

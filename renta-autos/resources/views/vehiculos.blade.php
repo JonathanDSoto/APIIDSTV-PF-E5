@@ -89,7 +89,7 @@
         <ul class="menu-inner py-1">
           <!-- Misc -->
           <li class="menu-item">
-            <a href="clientes.html" class="menu-link">
+            <a href="clientes.blade.php" class="menu-link">
               <i class="menu-icon tf-icons ti ti-users"></i>
               <div data-i18n="Clientes">Clientes</div>
             </a>
@@ -246,10 +246,9 @@
 
 
             <h4 class="py-3 mb-4">
-              <span class="text-muted fw-light">Panel de Vehículos</span>
-              <button class="btn btn-success" data-bs-toggle="" data-bs-target="">
-                <i class="ti ti-plus"></i> Agregar Vehículo
-              </button>
+              <span class="text-muted fw-light">Panel de Vehículo</span>
+              <button type="button" class="btn btn-success float-end me-sm-2 me-1" data-bs-toggle="modal"
+                data-bs-target="#agregarVehiculo"><i class="ti ti-plus"></i>Agregar Vehículo</button>
             </h4>
 
             <!-- Basic Bootstrap Table -->
@@ -353,16 +352,70 @@
     </div>
   </div>
 
-  <!-- Overlay -->
-  <div class="layout-overlay layout-menu-toggle"></div>
-
-  <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-  <div class="drag-target"></div>
-
+  <!-- Modal -->
+  <div class="modal fade" id="agregarVehiculo" tabindex="-1" role="dialog" aria-labelledby="form-vehiculo"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="form-vehiculo">Agregar Vehiculo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="card-body">
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label text-sm-end">Imagen</label>
+              <div class="col-sm-9">
+                <input type="file" id="vehiculo-imagen" class="form-control" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label text-sm-end">Placa</label>
+              <div class="col-sm-9">
+                <input type="text" id="vehiculo-placa" class="form-control" placeholder="Placa del Vehículo" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label text-sm-end">Modelo</label>
+              <div class="col-sm-9">
+                <input type="text" id="vehiculo-modelo" class="form-control" placeholder="Modelo del Vehículo" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label text-sm-end">Marca</label>
+              <div class="col-sm-9">
+                <input type="text" id="vehiculo-modelo" class="form-control" placeholder="Marca del Vehículo" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label text-sm-end">Categoria</label>
+              <div class="col-sm-9">
+                <input type="text" id="vehiculo-categoria" class="form-control" placeholder="Categoria del Vehículo" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label text-sm-end">Estado</label>
+              <div class="col-sm-9">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox">
+                  <label class="form-check-label" for="vehiculo-estado-disponible">Disponible</label>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-success">Agregar Vehiculo</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-  <!-- / Layout wrapper -->
-  <!-- Core JS -->
-  <!-- build:js assets/vendor/js/core.js -->
+
+  <div class="layout-overlay layout-menu-toggle"></div>
+  <div class="drag-target"></div>
+  </div>
+
 
   <script src="assets/vendor/libs/jquery/jquery.js"></script>
   <script src="assets/vendor/libs/popper/popper.js"></script>
