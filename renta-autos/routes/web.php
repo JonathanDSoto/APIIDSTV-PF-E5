@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\RentalController;
+use App\Http\Controllers\UserController;
+
+Route::resource('users', UserController::class);
 
 Route::resource('rentals', RentalController::class);
 
