@@ -105,6 +105,27 @@
               <i class="menu-icon tf-icons ti ti-file-description"></i>
               <div data-i18n="Rentas">Rentas</div>
             </a>
+
+
+            <!--/ <form action="{{ route('Vehicles.store') }}" method="post">
+                @csrf
+                <label for="marca">Marca:</label>
+                <input type="text" name="marca" required>
+                 aqui pudes llamar la informacion de los carros
+                <button type="submit">Agregar Vehículo</button>
+            </form>
+-->
+
+  <!-- muestra detalles de los carros
+@foreach ($cars as $car)
+    <a href="{{ route('cars.show', $Vehicles->id) }}">{{ $Vehicles->marca }} {{ $Vehicles->modelo }}</a>
+
+@endforeach
+
+<h1>{{ $Vehicles->marca }} {{ $Vehicles->modelo }}</h1>
+ mas detalles
+
+-->
           </li>
           <li class="menu-item">
             <a href="categorias.html" class="menu-link">
