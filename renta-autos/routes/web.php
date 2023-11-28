@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\BrandController;
+
+Route::resource('brands', BrandController::class);
 
 Route::resource('Vehicles', CarController::class);
 
