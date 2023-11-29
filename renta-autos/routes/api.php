@@ -2,6 +2,18 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\BrandsController;
+use App\Http\Controllers\RentalsController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\VehicleController;
+
+Route::apiResource('categories', CategoryController::class);
+Route::apiResource('brans', BrandsController::class);
+Route::apiResource('vehicles', VehicleController::class);
+Route::apiResource('users', UsersController::class);
+Route::apiResource('rentals', RentalsController::class);
+Route::resource('customers', 'CustomerController');
 
 /*
 |--------------------------------------------------------------------------
