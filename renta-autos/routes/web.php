@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CarController;
+use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\RentalController;
 use App\Http\Controllers\UserController;
@@ -12,7 +12,7 @@ Route::resource('rentals', RentalController::class);
 
 Route::resource('brands', BrandController::class);
 
-Route::resource('Vehicles', CarController::class);
+Route::resource('Vehicles', VehicleController::class);
 
 Route::get('/', function () {
     return view('login');
