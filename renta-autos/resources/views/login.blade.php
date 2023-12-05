@@ -7,7 +7,7 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-  <title>Login</title>
+  <title>Login-CarRental</title>
 
 
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 5" />
@@ -69,7 +69,7 @@
           <h3 class="mb-3">¡Bienvenido a nuestro servicio de alquiler de automóviles! 👋</h3>
           <p class="mb-4">Inicia sesión para comenzar tu viaje.</p>
 
-          <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+          <form id="formAuthentication" class="mb-3" action="">
             <div class="mb-2">
               <label for="email" class="form-label">Email or Username</label>
               <input type="text" class="form-control" id="email" name="email-username"
@@ -94,9 +94,7 @@
                 </label>
               </div>
             </div>
-            <button class="btn btn-primary d-grid w-100" href="clientes.blade.php">
-              Sign in
-            </button>
+            <a class="btn btn-primary d-grid w-100" href="{{ route('customers') }}">Login</a>
           </form>
         </div>
       </div>

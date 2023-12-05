@@ -79,7 +79,7 @@
                     <div class="dropdown-divider"></div>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="auth-login-cover.html" target="_blank">
+                  <a class="dropdown-item nav-link" href="{{ route('login') }}">
                       <i class="ti ti-logout me-2 ti-sm"></i>
                       <span class="align-middle">Cerrar sesión</span>
                     </a>
