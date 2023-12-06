@@ -3,7 +3,6 @@
     data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template">
 @include('head')
 <title>CarRental</title>
-
 <body>
     <div class="layout-wrapper layout-content-navbar  ">
         <div class="layout-container">
@@ -17,7 +16,7 @@
                         <h4 class="py-3 mb-4">
                             <span class="text-muted fw-light">Panel de Usuarios</span>
                             <button type="button" class="btn btn-success float-end me-sm-2 me-1" data-bs-toggle="modal"
-                                data-bs-target="#agregarUsuarioModal"><i class="ti ti-plus"></i>Agregar Usuario</button>
+                                data-bs-target="#agregarUsuarioModal"><i class="ti ti-plus"></i></button>
                         </h4>
                         <div class="card">
                             <div class="table-responsive text-nowrap">
@@ -30,7 +29,6 @@
                                             <th>Segundo Apellido</th>
                                             <th>Teléfono</th>
                                             <th>Email</th>
-                                            <th>Password</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
@@ -43,7 +41,6 @@
                                             <td>{{$item->last_name}}</td>
                                             <td>{{$item->phone}}</td>
                                             <td>{{$item->email}}</td>
-                                            <td>{{$item->password}}</td>
                                             <td>
                                                 <div class="dropdown">
                                                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow"

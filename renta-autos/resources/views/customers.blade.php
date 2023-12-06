@@ -17,7 +17,7 @@
             <h4 class="py-3 mb-4">
               <span class="text-muted fw-light">Panel de Clientes</span>
               <button type="button" class="btn btn-success float-end me-sm-2 me-1" data-bs-toggle="modal"
-                data-bs-target="#agregarClienteModal"><i class="ti ti-plus"></i>Agregar Cliente</button>
+                data-bs-target="#agregarClienteModal"><i class="ti ti-plus"></i></button>
             </h4>
             <div class="card">
               <div class="table-responsive text-nowrap">
@@ -90,31 +90,31 @@
               <div class="row mb-3">
                 <label class="col-sm-3 col-form-label text-sm-end">Nombre</label>
                 <div class="col-sm-9">
-                  <input type="text" name="placa" class="form-control" placeholder="Ingrese su Nombre" />
+                  <input type="text" name="placa" class="form-control" placeholder="Ingrese su Nombre" required/>
                 </div>
               </div>
               <div class="row mb-3">
                 <label class="col-sm-3 col-form-label text-sm-end">Primer Apellido</label>
                 <div class="col-sm-9">
-                  <input type="text" class="form-control" placeholder="Ingrese el primer apellido" />
+                  <input type="text" class="form-control" placeholder="Ingrese el primer apellido"required />
                 </div>
               </div>
               <div class="row mb-3">
                 <label class="col-sm-3 col-form-label text-sm-end">Segundo Apellido</label>
                 <div class="col-sm-9">
-                  <input type="text" class="form-control" placeholder="Ingrese el segundo apellido" />
+                  <input type="text" class="form-control" placeholder="Ingrese el segundo apellido" required/>
                 </div>
               </div>
               <div class="row mb-3">
                 <label class="col-sm-3 col-form-label text-sm-end">Telefono</label>
                 <div class="col-sm-9">
-                  <input type="text" class="form-control" placeholder="Ingrese su numero de telefono" />
+                  <input type="text" class="form-control" placeholder="Ingrese su numero de telefono" required/>
                 </div>
               </div>
               <div class="row mb-3">
                 <label class="col-sm-3 col-form-label text-sm-end">Correo</label>
                 <div class="col-sm-9">
-                  <input type="text" class="form-control" placeholder="Ingrese su correo" />
+                  <input type="text" class="form-control" placeholder="Ingrese su correo" required/>
                 </div>
               </div>
             </div>

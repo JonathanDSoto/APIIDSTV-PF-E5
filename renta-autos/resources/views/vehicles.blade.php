@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact " dir="ltr"
-  data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template">
+<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact " dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template">
 @include('head')
 <title>CarRental</title>
+
 <body>
   <div class="layout-wrapper layout-content-navbar  ">
     <div class="layout-container">
@@ -13,9 +13,8 @@
           <div class="container-xxl flex-grow-1 container-p-y">
             <h4 class="py-3 mb-4">
               <span class="text-muted fw-light">Panel de Vehículo</span>
-              <button type="button" class="btn btn-success float-end me-sm-1 me-1" data-bs-toggle="modal"
-                data-bs-target="#agregarVehiculoModal">
-                <i class="ti ti-plus"></i>Agregar Vehículo
+              <button type="button" class="btn btn-success float-end me-sm-1 me-1" data-bs-toggle="modal" data-bs-target="#agregarVehiculoModal">
+                <i class="ti ti-plus"></i>
               </button>
             </h4>
             <div class="card">
@@ -28,42 +27,40 @@
                       <th>Placa</th>
                       <th>Modelo</th>
                       <th>Color</th>
-                      <th>Marca</th>
-                      <th>Categoria</th>
                       <th>Estado</th>
                       <th>Acciones</th>
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach($datos as $item)
                     <tr>
-                      <td>1</td>
-                      <td><img src="{{ asset('assets/img/vehicles/Civic.png') }}" alt="Civic.jpg" width="100"></td>
-                      <td>ABC123</td>
-                      <td>Civic</td>
-                      <td>Azul</td>
-                      <td>Honda</td>
-                      <td>Sedán</td>
-                      <td><span class="badge bg-label-danger me-1">Ocupado</span></td>
+                      <td>#{{$item->id}}</td>
+                      <td>{{$item->img}}</td>
+                      <td>{{$item->lisense_plate}}</td>
+                      <td>{{$item->model}}</td>
+                      <td>{{$item->color}}</td>
+                      <td>{{$item->aviavle}}</td>
                       <td>
                         <div class="dropdown">
                           <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#consultaVehiculo">
-                              <i class="menu-icon tf-icons ti ti-file-description"></i> Consultar
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#consultavehiculo">
+                              <i class="menu-icon tf-icons ti ti-file-description"></i>
+                              Consultar
                             </a>
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editarVehiculo">
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editarvehiculo">
                               <i class="ti ti-pencil me-2"></i> Editar
                             </a>
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                              data-bs-target="#eliminarVehiculoModal">
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#eliminarvehiculoModal">
                               <i class="ti ti-trash me-2"></i> Eliminar
                             </a>
                           </div>
                         </div>
                       </td>
                     </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>
@@ -76,8 +73,7 @@
   </div>
 
   <!------------------------------------------------------Modal de Agregar Vehículo--------------------------------------------------->
-  <div class="modal fade" id="agregarVehiculoModal" tabindex="-1" data-bs-backdrop="static" role="dialog"
-    aria-labelledby="agregarVehiculoModalLabel" aria-hidden="true">
+  <div class="modal fade" id="agregarVehiculoModal" tabindex="-1" data-bs-backdrop="static" role="dialog" aria-labelledby="agregarVehiculoModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -96,31 +92,31 @@
               <div class="row mb-3">
                 <label class="col-sm-3 col-form-label text-sm-end">Placa</label>
                 <div class="col-sm-9">
-                  <input type="text" name="placa" class="form-control" placeholder="Placa del Vehículo" />
+                  <input type="text" name="placa" class="form-control" placeholder="Placa del Vehículo" required/>
                 </div>
               </div>
               <div class="row mb-3">
                 <label for="modelo" class="col-sm-3 col-form-label text-sm-end">Modelo</label>
                 <div class="col-sm-9">
-                  <input name="modelo" type="text" class="form-control" placeholder="Modelo del Vehículo" />
+                  <input name="modelo" type="text" class="form-control" placeholder="Modelo del Vehículo"required />
                 </div>
               </div>
               <div class="row mb-3">
                 <label for="marca" class="col-sm-3 col-form-label text-sm-end">Marca</label>
                 <div class="col-sm-9">
-                  <input name="marca" type="text" class="form-control" placeholder="Marca del Vehículo" />
+                  <input name="marca" type="text" class="form-control" placeholder="Marca del Vehículo"required />
                 </div>
               </div>
               <div class="row mb-3">
                 <label for="color" class="col-sm-3 col-form-label text-sm-end">Color</label>
                 <div class="col-sm-9">
-                  <input name="color" type="text" class="form-control" placeholder="Color del Vehículo" />
+                  <input name="color" type="text" class="form-control" placeholder="Color del Vehículo" required/>
                 </div>
               </div>
               <div class="row mb-3">
                 <label for="categoria" class="col-sm-3 col-form-label text-sm-end">Categoría</label>
                 <div class="col-sm-9">
-                  <input name="categoria" type="text" class="form-control" placeholder="Categoría del Vehículo" />
+                  <input name="categoria" type="text" class="form-control" placeholder="Categoría del Vehículo" required/>
                 </div>
               </div>
               <div class="row mb-3">
@@ -143,35 +139,32 @@
     </div>
   </div>
   <!-------------------------------------------------------Modal-consulta------------------------------------------------------------->
-  <div class="modal fade" id="consultaVehiculo" tabindex="-1" role="dialog" data-bs-backdrop="static"
-  aria-labelledby="consulta-vehiculo" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="consulta-vehiculo">Detalles del Vehículo</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <img src="{{ asset('assets/img/vehicles/Civic.png') }}" alt="Imagen 2" width="200"
-          class="mx-auto d-block">
-        <div class="col-4 text-left" >
-        <p>Placa: ABC123</p>
-        <p>Modelo: Civic</p>
-        <p>Color: Azul</p>
-        <p>Marca: Honda</p>
-        <p>Categoria: Sedán</p>
-        <p>Estado: Ocupado</p>
+  <div class="modal fade" id="consultaVehiculo" tabindex="-1" role="dialog" data-bs-backdrop="static" aria-labelledby="consulta-vehiculo" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="consulta-vehiculo">Detalles del Vehículo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <div class="modal-body">
+          <img src="{{ asset('assets/img/vehicles/Civic.png') }}" alt="Imagen 2" width="200" class="mx-auto d-block">
+          <div class="col-4 text-left">
+            <p>Placa: ABC123</p>
+            <p>Modelo: Civic</p>
+            <p>Color: Azul</p>
+            <p>Marca: Honda</p>
+            <p>Categoria: Sedán</p>
+            <p>Estado: Ocupado</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
   <!--------------------------------------------------------Modal de eliminación------------------------------------------------------>
-  <div class="modal fade" id="eliminarVehiculoModal" tabindex="-1" role="dialog"
-    aria-labelledby="eliminarVehiculoModalLabel" aria-hidden="true">
+  <div class="modal fade" id="eliminarVehiculoModal" tabindex="-1" role="dialog" aria-labelledby="eliminarVehiculoModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -189,8 +182,7 @@
     </div>
   </div>
   <!-------------------------------------------------------Modal de edición----------------------------------------------------------->
-  <div class="modal fade" id="editarVehiculo" tabindex="-1" role="dialog"
-    aria-labelledby="editarVehiculoModalLabel" aria-hidden="true">
+  <div class="modal fade" id="editarVehiculo" tabindex="-1" role="dialog" aria-labelledby="editarVehiculoModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -199,7 +191,7 @@
         </div>
         <div class="modal-body">
           <form class="form-inline">
-            
+
             <div class="card-body">
               <div class="row mb-3">
                 <label class="col-sm-3 col-form-label text-sm-end">Placa</label>
