@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class VehicleController extends Controller
 {
-    public function create(){
+    public function index(){
         $datos=DB::select("select * from vehicle");
         return view("vehicles")->with("datos", $datos);
     }

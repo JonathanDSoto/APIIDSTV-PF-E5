@@ -12,13 +12,31 @@ use App\Http\Controllers\CategoryController;
 
 
 
-Route::get('/',[SessionsController::class , 'create'])->name('login');
-Route::get('/users',[UserController::class , 'create'])->name('users');
-Route::get('/customers',[CustomerController::class , 'create'])->name('customers');
-Route::get('/vehicles',[VehicleController::class , 'create'])->name('vehicles');
-Route::get('/rentals',[RentalController::class , 'create'])->name('rentals');
-Route::get('/brands',[BrandController::class , 'create'])->name('brands');
-Route::get('/categories',[CategoryController::class , 'create'])->name('categories');
+Route::get('/',[SessionsController::class , 'index'])->name('login');
+
+
+
+Route::get('/users',[UserController::class , 'index'])->name('users');
+
+
+
+Route::get('/customers',[CustomerController::class , 'index'])->name('customers');
+
+
+
+Route::get('/vehicles',[VehicleController::class , 'index'])->name('vehicles');
+
+
+
+Route::get('/rentals',[RentalController::class , 'index'])->name('rentals');
+
+
+
+Route::get('/brands',[BrandController::class , 'index'])->name('brands');
+
+
+
+Route::get('/categories',[CategoryController::class , 'index'])->name('categories');
 
 
 Route::get('/check-database-connection', function () {

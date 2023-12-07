@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    public function create(){
+    public function index(){
         $datos=DB::select("select * from user");
         return view("users")->with("datos", $datos);
     }
