@@ -71,7 +71,6 @@
       </div>
     </div>
   </div>
-
   <!------------------------------------------------------Modal de Agregar Vehículo--------------------------------------------------->
   <div class="modal fade" id="agregarVehiculoModal" tabindex="-1" data-bs-backdrop="static" role="dialog" aria-labelledby="agregarVehiculoModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -248,7 +247,6 @@
       </div>
     </div>
   </div>
-  <!----------------------------------------------------------end Modal edicion------------------------------------------------------->
   @include('scripts')
 </body>
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact " dir="ltr"
-    data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template">
+<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact " dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template">
 @include('head')
 <title>CarRental</title>
+
 <body>
     <div class="layout-wrapper layout-content-navbar  ">
         <div class="layout-container">
@@ -15,8 +15,7 @@
 
                         <h4 class="py-3 mb-4">
                             <span class="text-muted fw-light">Panel de Usuarios</span>
-                            <button type="button" class="btn btn-success float-end me-sm-2 me-1" data-bs-toggle="modal"
-                                data-bs-target="#agregarUsuarioModal"><i class="ti ti-plus"></i></button>
+                            <button type="button" class="btn btn-success float-end me-sm-2 me-1" data-bs-toggle="modal" data-bs-target="#agregarUsuarioModal"><i class="ti ti-plus"></i></button>
                         </h4>
                         <div class="card">
                             <div class="table-responsive text-nowrap">
@@ -43,27 +42,24 @@
                                             <td>{{$item->email}}</td>
                                             <td>
                                                 <div class="dropdown">
-                                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                                        data-bs-toggle="dropdown">
+                                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                                                         <i class="ti ti-dots-vertical"></i>
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                            data-bs-target="#consultaUsuario">
+                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#consultaUsuario">
                                                             <i class="menu-icon tf-icons ti ti-file-description"></i>
                                                             Consultar
                                                         </a>
-                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                            data-bs-target="#editarUsuario">
+                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editarUsuario">
                                                             <i class="ti ti-pencil me-2"></i> Editar
                                                         </a>
-                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                            data-bs-target="#eliminarUsuarioModal">
+                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal">
                                                             <i class="ti ti-trash me-2"></i> Eliminar
                                                         </a>
                                                     </div>
                                                 </div>
                                             </td>
+                                            
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -76,10 +72,8 @@
             </div>
         </div>
     </div>
-    </div>
     <!------------------------------------------------------Modal de Agregar Usuario--------------------------------------------------->
-    <div class="modal fade" id="agregarUsuarioModal" tabindex="-1" data-bs-backdrop="static" role="dialog"
-        aria-labelledby="agregarUsuarioModalLabel" aria-hidden="true">
+    <div class="modal fade" id="agregarUsuarioModal" tabindex="-1" data-bs-backdrop="static" role="dialog" aria-labelledby="agregarUsuarioModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -98,37 +92,31 @@
                             <div class="row mb-3">
                                 <label for="modelo" class="col-sm-3 col-form-label text-sm-end">Primer Apellido</label>
                                 <div class="col-sm-9">
-                                    <input name="modelo" type="text" class="form-control"
-                                        placeholder="Primer Apellido" required />
+                                    <input name="modelo" type="text" class="form-control" placeholder="Primer Apellido" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="SegundoApellido"
-                                    class="col-sm-3 col-form-label text-sm-end">SegundoApellido</label>
+                                <label for="SegundoApellido" class="col-sm-3 col-form-label text-sm-end">SegundoApellido</label>
                                 <div class="col-sm-9">
-                                    <input name="SegundoApellido" type="text" class="form-control"
-                                        placeholder="Segundo Apellido" required  />
+                                    <input name="SegundoApellido" type="text" class="form-control" placeholder="Segundo Apellido" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="modelo" class="col-sm-3 col-form-label text-sm-end">Telefóno</label>
                                 <div class="col-sm-9">
-                                    <input name="modelo" type="text" class="form-control" placeholder="Telefóno"
-                                        required />
+                                    <input name="modelo" type="text" class="form-control" placeholder="Telefóno" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="modelo" class="col-sm-3 col-form-label text-sm-end">Email</label>
                                 <div class="col-sm-9">
-                                    <input name="modelo" type="text" class="form-control" placeholder="Email"
-                                        required />
+                                    <input name="modelo" type="text" class="form-control" placeholder="Email" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="modelo" class="col-sm-3 col-form-label text-sm-end">Contraseña</label>
                                 <div class="col-sm-9">
-                                    <input name="modelo" type="password" class="form-control" placeholder="Contraseña"
-                                        required />
+                                    <input name="modelo" type="password" class="form-control" placeholder="Contraseña" required />
                                 </div>
                             </div>
                         </div>
@@ -142,8 +130,7 @@
         </div>
     </div>
     <!-------------------------------------------------------Modal-consulta------------------------------------------------------------->
-    <div class="modal fade" id="consultaUsuario" tabindex="-1" role="dialog" data-bs-backdrop="static"
-        aria-labelledby="consulta-Usuario" aria-hidden="true">
+    <div class="modal fade" id="consultaUsuario" tabindex="-1" role="dialog" data-bs-backdrop="static" aria-labelledby="consulta-Usuario" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -151,8 +138,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="{{ asset('assets/img/avatars/1.png') }}" alt="Imagen 2" width="200"
-                        class="mx-auto d-block">
+                    <img src="{{ asset('assets/img/avatars/1.png') }}" alt="Imagen 2" width="200" class="mx-auto d-block">
                     <div class="col-7 text-left">
                         <p>Nombre: Juan </p>
                         <p>Primer Apellido: Pérez </p>
@@ -169,8 +155,7 @@
         </div>
     </div>
     <!--------------------------------------------------------Modal de eliminación------------------------------------------------------>
-    <div class="modal fade" id="eliminarUsuarioModal" tabindex="-1" role="dialog"
-        aria-labelledby="eliminarUsuarioModalLabel" aria-hidden="true">
+    <div class="modal fade" id="eliminarUsuarioModal" tabindex="-1" role="dialog" aria-labelledby="eliminarUsuarioModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -188,8 +173,7 @@
         </div>
     </div>
     <!-------------------------------------------------------Modal de edición----------------------------------------------------------->
-    <div class="modal fade" id="editarUsuario" tabindex="-1" role="dialog" aria-labelledby="editarUsuarioModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="editarUsuario" tabindex="-1" role="dialog" aria-labelledby="editarUsuarioModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -202,43 +186,37 @@
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label text-sm-end">Nombre</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="Nombre" class="form-control"
-                                        placeholder="Nombre del Usuario" required />
+                                    <input type="text" name="Nombre" class="form-control" placeholder="Nombre del Usuario" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="modelo" class="col-sm-3 col-form-label text-sm-end">PrimerApellido</label>
                                 <div class="col-sm-9">
-                                    <input name="modelo" type="text" class="form-control"
-                                        placeholder="Primer Apellido del Usuario" required />
+                                    <input name="modelo" type="text" class="form-control" placeholder="Primer Apellido del Usuario" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="modelo" class="col-sm-3 col-form-label text-sm-end">SegundoApellido</label>
                                 <div class="col-sm-9">
-                                    <input name="modelo" type="text" class="form-control"
-                                        placeholder="Segundo Apellido del Usuario" required />
+                                    <input name="modelo" type="text" class="form-control" placeholder="Segundo Apellido del Usuario" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="modelo" class="col-sm-3 col-form-label text-sm-end">Telefóno</label>
                                 <div class="col-sm-9">
-                                    <input name="modelo" type="text" class="form-control" placeholder="Telefóno"
-                                        required />
+                                    <input name="modelo" type="text" class="form-control" placeholder="Telefóno" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="modelo" class="col-sm-3 col-form-label text-sm-end">Email</label>
                                 <div class="col-sm-9">
-                                    <input name="modelo" type="text" class="form-control" placeholder="Email"
-                                        required />
+                                    <input name="modelo" type="text" class="form-control" placeholder="Email" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="modelo" class="col-sm-3 col-form-label text-sm-end">Contraseña</label>
                                 <div class="col-sm-9">
-                                    <input name="modelo" type="password" class="form-control" placeholder="Contraseña"
-                                        required />
+                                    <input name="modelo" type="password" class="form-control" placeholder="Contraseña" required />
                                 </div>
                             </div>
                         </div>
@@ -251,7 +229,6 @@
             </div>
         </div>
     </div>
-    <!----------------------------------------------------------end Modal edicion------------------------------------------------------->
     @include('scripts')
 </body>
 

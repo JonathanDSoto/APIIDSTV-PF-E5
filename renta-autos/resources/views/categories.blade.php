@@ -24,6 +24,7 @@
                     <tr>
                       <th>#ID</th>
                       <th>Nombre</th>
+                      <th>Acciones</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -37,10 +38,6 @@
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#consultaCategoria">
-                              <i class="menu-icon tf-icons ti ti-file-description"></i>
-                              Consultar
-                            </a>
                             <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editarCategoria">
                               <i class="ti ti-pencil me-2"></i> Editar
                             </a>
@@ -90,26 +87,6 @@
       </div>
     </div>
   </div>
-  <!-------------------------------------------------------Modal-consulta------------------------------------------------------------->
-  <div class="modal fade" id="consultaCategoria" tabindex="-1" role="dialog" data-bs-backdrop="static" aria-labelledby="consulta-Categoria" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="consulta-Categoria">Detalles del Categoria</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <img src="{{ asset('assets/img/avatars/1.png') }}" alt="Imagen 2" width="200" class="mx-auto d-block">
-          <div class="col-7 text-left">
-            <p>Nombre: Juan </p>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
-    </div>
-  </div>
   <!--------------------------------------------------------Modal de eliminación------------------------------------------------------>
   <div class="modal fade" id="eliminarCategoriaModal" tabindex="-1" role="dialog" aria-labelledby="eliminarCategoriaModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -155,7 +132,6 @@
       </div>
     </div>
   </div>
-  <!----------------------------------------------------------end Modal edicion------------------------------------------------------->
   @include('scripts')
 </body>
 
