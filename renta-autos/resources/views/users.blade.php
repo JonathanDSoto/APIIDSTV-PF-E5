@@ -18,6 +18,13 @@
                             <button type="button" class="btn btn-success float-end me-sm-2 me-1" data-bs-toggle="modal"
                                 data-bs-target="#agregarUsuarioModal"><i class="ti ti-plus"></i></button>
                         </h4>
+                        @if (session("correcto"))
+                        <div class="alert alert-success">{{session("correcto")}}</div>
+                        @endif
+
+                        @if (session("incorrecto"))
+                        <div class="alert alert-danger">{{session("incorrecto")}}</div>
+                        @endif
                         <div class="card">
                             <div class="table-responsive text-nowrap">
                                 <table class="table">
@@ -54,7 +61,7 @@
                                                             Consultar
                                                         </a>
                                                         <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                            data-bs-target="#editarUsuario">
+                                                            data-bs-target="#editarUsuario" >
                                                             <i class="ti ti-pencil me-2"></i> Editar
                                                         </a>
                                                         <a class="dropdown-item" href="#" data-bs-toggle="modal"
@@ -87,18 +94,19 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="form-inline" enctype=multipart/form-data>
+                    <form  method="POST" action="{{ route("users") }}" class="form-inline" enctype=multipart/form-data>
+                    @csrf
                         <div class="card-body">
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label text-sm-end">Nombre</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="Nombre" class="form-control" placeholder="Nombre" required />
+                                    <input type="text" name="name" class="form-control" placeholder="Nombre" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="modelo" class="col-sm-3 col-form-label text-sm-end">Primer Apellido</label>
+                                <label for="PrimerApellido" class="col-sm-3 col-form-label text-sm-end">Primer Apellido</label>
                                 <div class="col-sm-9">
-                                    <input name="modelo" type="text" class="form-control"
+                                    <input name="first_name" type="text" class="form-control"
                                         placeholder="Primer Apellido" required />
                                 </div>
                             </div>
@@ -106,28 +114,28 @@
                                 <label for="SegundoApellido"
                                     class="col-sm-3 col-form-label text-sm-end">SegundoApellido</label>
                                 <div class="col-sm-9">
-                                    <input name="SegundoApellido" type="text" class="form-control"
+                                    <input name="last_name" type="text" class="form-control"
                                         placeholder="Segundo Apellido" required  />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="modelo" class="col-sm-3 col-form-label text-sm-end">Telefóno</label>
+                                <label for="Modelo" class="col-sm-3 col-form-label text-sm-end">Telefóno</label>
                                 <div class="col-sm-9">
-                                    <input name="modelo" type="text" class="form-control" placeholder="Telefóno"
+                                    <input name="phone" type="text" class="form-control" placeholder="Telefóno"
                                         required />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="modelo" class="col-sm-3 col-form-label text-sm-end">Email</label>
+                                <label for="Email" class="col-sm-3 col-form-label text-sm-end">Email</label>
                                 <div class="col-sm-9">
-                                    <input name="modelo" type="text" class="form-control" placeholder="Email"
+                                    <input name="email" type="text" class="form-control" placeholder="Email"
                                         required />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="modelo" class="col-sm-3 col-form-label text-sm-end">Contraseña</label>
+                                <label for="Contraseña" class="col-sm-3 col-form-label text-sm-end">Contraseña</label>
                                 <div class="col-sm-9">
-                                    <input name="modelo" type="password" class="form-control" placeholder="Contraseña"
+                                    <input name="password" type="password" class="form-control" placeholder="Contraseña"
                                         required />
                                 </div>
                             </div>
@@ -182,7 +190,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
+                    <a href="{{route("users", $item->id)}}" type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</a>
                 </div>
             </div>
         </div>
@@ -197,48 +205,46 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="form-inline">
+                    <form  method="POST" action="{{ route("users") }}" class="form-inline">
+                    @csrf
                         <div class="card-body">
                             <div class="row mb-3">
-                                <label class="col-sm-3 col-form-label text-sm-end">Nombre</label>
+                                <label for="name" class="col-sm-3 col-form-label text-sm-end">Nombre</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="Nombre" class="form-control"
-                                        placeholder="Nombre del Usuario" required />
+                                    <input type="text" name="name" class="form-control"
+                                        placeholder="Nombre del Usuario" value="{{$item->name}}" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="modelo" class="col-sm-3 col-form-label text-sm-end">PrimerApellido</label>
+                                <label for="first_name" class="col-sm-3 col-form-label text-sm-end">PrimerApellido</label>
                                 <div class="col-sm-9">
-                                    <input name="modelo" type="text" class="form-control"
-                                        placeholder="Primer Apellido del Usuario" required />
+                                    <input name="first_name" type="text" class="form-control"
+                                        placeholder="Primer Apellido del Usuario" value="{{$item->first_name}}"  required />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="modelo" class="col-sm-3 col-form-label text-sm-end">SegundoApellido</label>
+                                <label for="last_name" class="col-sm-3 col-form-label text-sm-end">SegundoApellido</label>
                                 <div class="col-sm-9">
-                                    <input name="modelo" type="text" class="form-control"
-                                        placeholder="Segundo Apellido del Usuario" required />
+                                    <input name="last_name" type="text" class="form-control"
+                                        placeholder="Segundo Apellido del Usuario" value="{{$item->last_name}}"  required />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="modelo" class="col-sm-3 col-form-label text-sm-end">Telefóno</label>
+                                <label for="phone" class="col-sm-3 col-form-label text-sm-end">Telefóno</label>
                                 <div class="col-sm-9">
-                                    <input name="modelo" type="text" class="form-control" placeholder="Telefóno"
-                                        required />
+                                    <input name="phone" type="text" class="form-control" placeholder="Telefóno" value="{{$item->phone}}" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="modelo" class="col-sm-3 col-form-label text-sm-end">Email</label>
+                                <label for="email" class="col-sm-3 col-form-label text-sm-end">Email</label>
                                 <div class="col-sm-9">
-                                    <input name="modelo" type="text" class="form-control" placeholder="Email"
-                                        required />
+                                    <input name="email" type="text" class="form-control" placeholder="Email" value="{{$item->email}}" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="modelo" class="col-sm-3 col-form-label text-sm-end">Contraseña</label>
+                                <label for="password" class="col-sm-3 col-form-label text-sm-end">Contraseña</label>
                                 <div class="col-sm-9">
-                                    <input name="modelo" type="password" class="form-control" placeholder="Contraseña"
-                                        required />
+                                    <input name="password" type="password" class="form-control" placeholder="Contraseña" value="{{$item->password}}"  required />
                                 </div>
                             </div>
                         </div>
