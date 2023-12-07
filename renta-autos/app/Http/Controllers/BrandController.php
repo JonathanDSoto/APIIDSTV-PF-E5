@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 class BrandController extends Controller
 {
     public function create(){
-        $datos=DB::select("select * from brands");
+        $datos=DB::select("select * from brand");
         return view("brands")->with("datos", $datos);
     }
 }

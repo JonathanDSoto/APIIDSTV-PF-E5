@@ -8,7 +8,7 @@ class CustomerController extends Controller
 {
 
    public function create(){
-        $datos=DB::select("select * from customers");
+        $datos=DB::select("select * from customer");
         return view("customers")->with("datos", $datos);
     }
 

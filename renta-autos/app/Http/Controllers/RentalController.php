@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 class RentalController extends Controller
 {
     public function create(){
-        $datos=DB::select("select * from rentals");
+        $datos=DB::select("select * from rental");
         return view("rentals")->with("datos", $datos);
     }
 }
