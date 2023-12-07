@@ -7,8 +7,8 @@
   <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
   <div class="app-brand demo">
   <a href="{{ route('login') }}" class="app-brand-link">
-    <img src="{{asset('assets/img/icons/icono.png')}}" alt="CarRental" class="app-brand-logo demo">
-    <span class="app-brand-text demo menu-text fw-bold">CarRental</span>
+    <img src="{{asset('assets/img/icons/icono-Car-Rental.png')}}" alt="CarRental" class="app-brand-logo demo">
+    <span class="app-brand-text demo menu-text fw-bold"></span>
   </a>
 
   <a href="{{ route('login') }}" class="layout-menu-toggle menu-link text-large ms-auto">
