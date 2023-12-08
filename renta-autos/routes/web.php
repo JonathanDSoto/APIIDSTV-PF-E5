@@ -12,6 +12,13 @@ use App\Http\Controllers\CategoryController;
 
 // Login
 Route::get('/',[SessionsController::class , 'index'])->name('login');
+Route::post('/login',[SessionsController::class , 'login'])->name('login.post');
+
+
+
+// Logout
+Route::post('/logout', [SessionsController::class, 'logout'])->name('logout');
+
 
 
 // Usuarios
@@ -22,6 +29,7 @@ Route::post('/register-users',[UserController::class , 'add'])->name('users.crea
 Route::post('/update-users',[UserController::class , 'update'])->name('users.update');
 // Ruta para eliminar un usuario
 Route::get('/delete-users-{id}',[UserController::class , 'delete'])->name('users.delete');
+
 
 
 // Clientes
@@ -43,6 +51,12 @@ Route::post('/register-vehicles',[VehicleController::class , 'add'])->name('vehi
 
 // Rentas
 Route::get('/rentals',[RentalController::class , 'index'])->name('rentals');
+// Ruta para añadir una nueva renta
+Route::post('/register-customers',[CustomerController::class , 'add'])->name('customers.create');
+// Ruta para editar una renta
+Route::post('/update-customers',[CustomerController::class , 'update'])->name('customers.update');
+// Ruta para eliminar una renta
+Route::get('/delete-customers-{id}',[CustomerController::class , 'delete'])->name('customers.delete');
 
 
 // Marcas

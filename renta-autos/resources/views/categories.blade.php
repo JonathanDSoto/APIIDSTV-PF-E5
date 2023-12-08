@@ -45,6 +45,10 @@
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#consultaCategoria{{$item->id}}">
+                              <i class="menu-icon tf-icons ti ti-file-description"></i>
+                              Consultar
+                            </a>
                             <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editarCategoria{{$item->id}}">
                               <i class="ti ti-pencil me-2"></i> Editar
                             </a>
@@ -95,6 +99,29 @@
       </div>
     </div>
   </div>
+   <!-------------------------------------------------------Modal-consulta------------------------------------------------------------->
+   @foreach($datos as $item)
+   <div class="modal fade" id="consultaCategoria{{$item->id}}" tabindex="-1" role="dialog" data-bs-backdrop="static" aria-labelledby="consulta-Usuario" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="consulta-Categoria">Vehículos que pertenecen a la categoría</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-7 text-left">
+                        <p>ID: {{$item->id}}</p>
+                        <p>Categoría: {{$item->name}}</p>
+                        <p>Vehículos: No hay vehículos por el momento.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
   <!--------------------------------------------------------Modal de eliminación------------------------------------------------------>
   @foreach($datos as $item)
   <div class="modal fade" id="eliminarCategoriaModal{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="eliminarCategoriaModalLabel" aria-hidden="true">

@@ -56,6 +56,10 @@
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#consultaCliente{{$item->id}}">
+                                <i class="menu-icon tf-icons ti ti-file-description"></i>
+                                Consultar
+                            </a>
                             <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editarCliente{{$item->id}}">
                               <i class="ti ti-pencil me-2"></i> Editar
                             </a>
@@ -131,6 +135,33 @@
       </div>
     </div>
   </div>
+   <!-------------------------------------------------------Modal-consulta------------------------------------------------------------->
+   @foreach($datos as $item)
+   <div class="modal fade" id="consultaCliente{{$item->id}}" tabindex="-1" role="dialog" data-bs-backdrop="static" aria-labelledby="consulta-Usuario" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="consulta-Cliente">Historial de rentas del Cliente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-7 text-left">
+                        <p>ID: {{$item->id}}</p>
+                        <p>Nombre: {{$item->name}}</p>
+                        <p>Primer Apellido: {{$item->first_name}}</p>
+                        <p>Segundo Apellido: {{$item->last_name}}</p>
+                        <p>Teléfono: {{$item->phone}}</p>
+                        <p>Correo electrónico: {{$item->email}}</p>
+                        <p>Rentas: Una renta activa.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach
   <!--------------------------------------------------------Modal de eliminación------------------------------------------------------>
   @foreach($datos as $item)
   <div class="modal fade" id="eliminarClienteModal{{$item->id}}" tabindex="-1" role="dialog"

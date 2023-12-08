@@ -79,7 +79,7 @@
                     <div class="dropdown-divider"></div>
                   </li>
                   <li>
-                  <a class="dropdown-item nav-link" href="{{ route('login') }}">
+                  <a class="dropdown-item nav-link" href="{{ route('logout') }}">
                       <i class="ti ti-logout me-2 ti-sm"></i>
                       <span class="align-middle">Cerrar sesión</span>
                     </a>

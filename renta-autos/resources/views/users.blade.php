@@ -138,8 +138,8 @@
         </div>
     </div>
     
-    @foreach($datos as $item)
     <!-------------------------------------------------------Modal-consulta------------------------------------------------------------->
+    @foreach($datos as $item)
     <div class="modal fade" id="consultaUsuario{{$item->id}}" tabindex="-1" role="dialog" data-bs-backdrop="static" aria-labelledby="consulta-Usuario" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -148,8 +148,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="{{ asset('assets/img/avatars/1.png') }}" alt="Imagen 6" width="200" class="mx-auto d-block">
                     <div class="col-7 text-left">
+                        <p>ID: {{$item->id}}</p>
                         <p>Nombre: {{$item->name}}</p>
                         <p>Primer Apellido: {{$item->first_name}}</p>
                         <p>Segundo Apellido: {{$item->last_name}}</p>

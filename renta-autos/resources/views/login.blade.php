@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" class="light-style layout-wide  customizer-hide" dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template">
 
@@ -42,19 +41,20 @@
           <div class="mb-3 text-center py-3">
             <img src="{{ asset('assets/img/icons/icono-Car-Rental.png')}}" alt="Car Rental" width="250" height="125">
           </div>
-          <h3 class="mb-3">¡Bienvenido a nuestro servicio de alquiler de automóviles! 👋</h3>
+          <h3 class="mb-3">¡Bienvenido a nuestro servicio de alquiler de automóviles! </h3>
 
-          <form id="formAuthentication" class="mb-3" action="">
+          <form method="POST" action="{{ route('login.post') }}" id="formAuthentication" class="mb-3" >
+          @csrf 
             <div class="mb-2">
-              <label for="email" class="form-label">Correo o Username</label>
-              <input type="text" class="form-control" id="email" name="email-username" placeholder="Ingrese su correo o username" autofocus>
+              <label for="email" class="form-label">Correo electrónico</label>
+              <input type="text" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico"  value="{{ old('email') }}" autofocus>
             </div>
             <div class="mb-3 form-password-toggle">
               <div class="d-flex justify-content-between">
                 <label class="form-label" for="password">Contraseña</label>
               </div>
               <div class="input-group input-group-merge">
-                <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
+                <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" value="{{ old('password') }}" />
                 <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
               </div>
             </div>
@@ -66,7 +66,7 @@
                 </label>
               </div>
             </div>
-            <a class="btn btn-primary d-grid w-100" href="{{ route('customers') }}">Login</a>
+            <button type="submit" class="btn btn-primary d-grid w-100">Login</button>
           </form>
         </div>
       </div>
