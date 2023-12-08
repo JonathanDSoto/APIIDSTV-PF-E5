@@ -17,6 +17,13 @@
               <span class="text-muted fw-light">Panel de Categorias</span>
               <button type="button" class="btn btn-success float-end me-sm-2 me-1" data-bs-toggle="modal" data-bs-target="#agregarCategoriaModal"><i class="ti ti-plus"></i></button>
             </h4>
+            @if (session("correcto"))
+            <div class="alert alert-success">{{session("correcto")}}</div>
+            @endif
+
+            @if (session("incorrecto"))
+            <div class="alert alert-danger">{{session("incorrecto")}}</div>
+            @endif
             <div class="card">
               <div class="table-responsive text-nowrap">
                 <table class="table">
@@ -38,10 +45,10 @@
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editarCategoria">
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editarCategoria{{$item->id}}">
                               <i class="ti ti-pencil me-2"></i> Editar
                             </a>
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#eliminarCategoriaModal">
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#eliminarCategoriaModal{{$item->id}}">
                               <i class="ti ti-trash me-2"></i> Eliminar
                             </a>
                           </div>
@@ -69,12 +76,13 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form class="form-inline" enctype=multipart/form-data>
+          <form method="POST" action="{{ route("categories.create") }}" class="form-inline" enctype=multipart/form-data>
+          @csrf
             <div class="card-body">
               <div class="row mb-3">
                 <label class="col-sm-3 col-form-label text-sm-end">Nombre</label>
                 <div class="col-sm-9">
-                  <input type="text" name="Nombre" class="form-control" placeholder="Nombre" required />
+                  <input type="text" name="name" class="form-control" placeholder="Ingrese el nombre de la categoria" minlength="3" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Ingrese solo letras" required />
                 </div>
               </div>
             </div>
@@ -88,7 +96,8 @@
     </div>
   </div>
   <!--------------------------------------------------------Modal de eliminación------------------------------------------------------>
-  <div class="modal fade" id="eliminarCategoriaModal" tabindex="-1" role="dialog" aria-labelledby="eliminarCategoriaModalLabel" aria-hidden="true">
+  @foreach($datos as $item)
+  <div class="modal fade" id="eliminarCategoriaModal{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="eliminarCategoriaModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -100,13 +109,15 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</button>
+          <a href="{{ route("categories.delete", $item->id) }}" class="btn btn-danger">Eliminar</a>
         </div>
       </div>
     </div>
   </div>
+  @endforeach
   <!-------------------------------------------------------Modal de edición----------------------------------------------------------->
-  <div class="modal fade" id="editarCategoria" tabindex="-1" role="dialog" aria-labelledby="editarCategoriaModalLabel" aria-hidden="true">
+  @foreach($datos as $item)
+  <div class="modal fade" id="editarCategoria{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="editarCategoriaModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -114,12 +125,20 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form class="form-inline">
+          <form  method="POST" action="{{ route("categories.update") }}" class="form-inline"  class="form-inline">
+          @csrf
+          <input type="hidden" name="id" value="{{$item->id}}">
             <div class="card-body">
+            <div class="row mb-3">
+              <label class="col-sm-3 col-form-label text-sm-end">ID</label>
+              <div class="col-sm-9">
+                  <input type="number" name="id" class="form-control" value="{{$item->id}}" readonly />
+              </div>
+            </div>
               <div class="row mb-3">
                 <label class="col-sm-3 col-form-label text-sm-end">Nombre</label>
                 <div class="col-sm-9">
-                  <input type="text" name="Nombre" class="form-control" placeholder="Nombre del Categoria" required />
+                  <input type="text" name="name" class="form-control" placeholder="Nombre de la categoria" value="{{$item->name}}" minlength="3" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Ingrese solo letras"  required />
                 </div>
               </div>
             </div>
@@ -132,6 +151,7 @@
       </div>
     </div>
   </div>
+  @endforeach
   @include('scripts')
 </body>
 

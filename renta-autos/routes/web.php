@@ -51,6 +51,12 @@ Route::get('/brands',[BrandController::class , 'index'])->name('brands');
 
 // Categorias
 Route::get('/categories',[CategoryController::class , 'index'])->name('categories');
+// Ruta para añadir una nueva categoria
+Route::post('/register-categories',[CategoryController::class , 'add'])->name('categories.create');
+// Ruta para editar una categoria
+Route::post('/update-categories',[CategoryController::class , 'update'])->name('categories.update');
+// Ruta para eliminar una categoria
+Route::get('/delete-categories-{id}',[CategoryController::class , 'delete'])->name('categories.delete');
 
 
 
