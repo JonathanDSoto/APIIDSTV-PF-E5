@@ -47,6 +47,10 @@ Route::get('/delete-customers-{id}',[CustomerController::class , 'delete'])->nam
 Route::get('/vehicles',[VehicleController::class , 'index'])->name('vehicles');
 // Ruta para añadir un nuevo vehiculo
 Route::post('/register-vehicles',[VehicleController::class , 'add'])->name('vehicles.create');
+// Ruta para editar un vehiculo
+Route::post('/update-vehicles',[VehicleController::class , 'update'])->name('vehicles.update');
+// Ruta para eliminar un vehiculo
+Route::get('/delete-vehicles-{id}',[VehicleController::class , 'delete'])->name('vehicles.delete');
 
 
 // Rentas
