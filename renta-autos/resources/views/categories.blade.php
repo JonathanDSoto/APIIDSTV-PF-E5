@@ -125,7 +125,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form  method="POST" action="{{ route("categories.update") }}" class="form-inline"  class="form-inline">
+          <form  method="POST" action="{{ route("categories.update") }}" class="form-inline">
           @csrf
           <input type="hidden" name="id" value="{{$item->id}}">
             <div class="card-body">

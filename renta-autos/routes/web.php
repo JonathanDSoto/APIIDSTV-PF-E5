@@ -47,6 +47,12 @@ Route::get('/rentals',[RentalController::class , 'index'])->name('rentals');
 
 // Marcas
 Route::get('/brands',[BrandController::class , 'index'])->name('brands');
+// Ruta para añadir una nueva marca
+Route::post('/register-brands',[BrandController::class , 'add'])->name('brands.create');
+// Ruta para editar una marca
+Route::post('/update-brands',[BrandController::class , 'update'])->name('brands.update');
+// Ruta para eliminar una marca
+Route::get('/delete-brands-{id}',[BrandController::class , 'delete'])->name('brands.delete');
 
 
 // Categorias

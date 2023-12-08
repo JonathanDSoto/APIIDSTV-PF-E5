@@ -56,7 +56,7 @@ class CategoryController extends Controller
             $sql = 0;
         }
         if ($sql == true) {
-            return back()->with("correcto","¡Categoria eliminado correctamente!");
+            return back()->with("correcto","¡Categoria eliminada correctamente!");
         } else {
             return back() ->with("incorrecto","Error al eliminar una categoria, por favor verifique la información.");
         }
