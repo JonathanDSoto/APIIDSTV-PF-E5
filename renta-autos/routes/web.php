@@ -11,20 +11,53 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 
 
+Route::get('/',[SessionsController::class , 'index'])->name('login');
 
-Route::get('/',[SessionsController::class , 'create'])->name('login');
-Route::get('/users',[UserController::class , 'create'])->name('users');
+
+
+Route::get('/users',[UserController::class , 'index'])->name('users');
+
+
+
 // Ruta para añadir un nuevo usuario
-Route::post('/users',[UserController::class , 'add'])->name('users');
+Route::post('/register-users',[UserController::class , 'add'])->name('users.create');
+
+
+
 // Ruta para editar un usuario
-Route::post('/users',[UserController::class , 'update'])->name('users');
+Route::post('/update-users',[UserController::class , 'update'])->name('users.update');
+
+
+
 // Ruta para eliminar un usuario
-Route::get('/users-{name}',[UserController::class , 'delete'])->name('users');
-Route::get('/customers',[CustomerController::class , 'create'])->name('customers');
-Route::get('/vehicles',[VehicleController::class , 'create'])->name('vehicles');
-Route::get('/rentals',[RentalController::class , 'create'])->name('rentals');
-Route::get('/brands',[BrandController::class , 'create'])->name('brands');
-Route::get('/categories',[CategoryController::class , 'create'])->name('categories');
+Route::get('/delete-users-{id}',[UserController::class , 'delete'])->name('users.delete');
+
+
+
+Route::get('/customers',[CustomerController::class , 'index'])->name('customers');
+
+
+
+Route::get('/vehicles',[VehicleController::class , 'index'])->name('vehicles');
+
+
+
+// Ruta para añadir un nuevo vehiculo
+Route::post('/register-vehicles',[VehicleController::class , 'add'])->name('vehicles.create');
+
+
+
+
+Route::get('/rentals',[RentalController::class , 'index'])->name('rentals');
+
+
+
+Route::get('/brands',[BrandController::class , 'index'])->name('brands');
+
+
+
+Route::get('/categories',[CategoryController::class , 'index'])->name('categories');
+
 
 
 Route::get('/check-database-connection', function () {

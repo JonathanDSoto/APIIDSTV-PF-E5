@@ -48,10 +48,6 @@
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#consultaCliente">
-                              <i class="menu-icon tf-icons ti ti-file-description"></i>
-                              Consultar
-                            </a>
                             <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editarCliente">
                               <i class="ti ti-pencil me-2"></i> Editar
                             </a>
@@ -123,27 +119,6 @@
               <button id="agregarCliente" type="submit" class="btn btn-success">Agregar Cliente</button>
             </div>
           </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-------------------------------------------------------Modal-consulta------------------------------------------------------------->
-  <div class="modal fade" id="consultaCliente" tabindex="-1" role="dialog" data-bs-backdrop="static"
-    aria-labelledby="consulta-Cliente" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="consulta-Cliente">Detalles del Cliente</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <img src="{{ asset('assets/img/avatars/1.png') }}" alt="Imagen 2" width="200" class="mx-auto d-block">
-          <div class="col-4 text-left">
-            <p></p>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
@@ -220,7 +195,6 @@
       </div>
     </div>
   </div>
-  <!----------------------------------------------------------end Modal edicion------------------------------------------------------->
   @include('scripts')
 </body>
 

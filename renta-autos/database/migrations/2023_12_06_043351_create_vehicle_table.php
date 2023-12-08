@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('img');
             $table->string('lisense_plate');
             $table->string('model');
+            $table->string('brand');
             $table->string('color');
             $table->boolean('aviavle');
         });

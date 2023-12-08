@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    public function create(){
+    public function index(){
         $datos=DB::select("select * from user");
         return view("users")->with("datos", $datos);
     }
@@ -38,17 +38,15 @@ class UserController extends Controller
     public function update(Request $request)
     {
         try {
-            $sql = DB::update(" update user set name=?,first_name=?,last_name=?,phone=?,email=?,password=? ", [
+            $sql = DB::update(" update user set name=?,first_name=?,last_name=?,phone=?,email=?,password=? where id=? ", [
                 $request->name,
                 $request->first_name,
                 $request->last_name,
                 $request->phone,
                 $request->email,
                 $request->password,
+                $request->id,
             ]);
-            if ($sql == 0) {
-                $sql = 1;
-            }
         } catch (\Throwable $th) {
             $sql = 0;
         }
@@ -65,18 +63,18 @@ class UserController extends Controller
     {
         try {
             $sql = DB::delete(" delete from user where id=$id ");
-
         } catch (\Throwable $th) {
             $sql = 0;
         }
         if ($sql == true) {
-            return back()->with("correcto","¡Usuario eliminados correctamente!");
+            return back()->with("correcto","¡Usuario eliminado correctamente!");
         } else {
             return back() ->with("incorrecto","Error al eliminar un usuario, por favor verifique la información.");
         }
         
        
     }
+
 
   
 }

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact " dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template">
 @include('head')
-
 <body>
   <div class="layout-wrapper layout-content-navbar  ">
     <div class="layout-container">
@@ -81,21 +80,21 @@
 
             <div class="card-body">
               <div class="row mb-3">
-                <label class="col-sm-3 col-form-label text-sm-end">Placa</label>
+                <label class="col-sm-3 col-form-label text-sm-end">nombre</label>
                 <div class="col-sm-9">
-                  <input type="text" name="placa" class="form-control" placeholder="Placa del Renta" required/>
+                  <input type="text" name="nombre" class="form-control" placeholder="Ingrese su nombre" required/>
                 </div>
               </div>
               <div class="row mb-3">
-                <label for="modelo" class="col-sm-3 col-form-label text-sm-end">Modelo</label>
+                <label for="fechaInicio" class="col-sm-3 col-form-label text-sm-end">Fecha Inicial</label>
                 <div class="col-sm-9">
-                  <input name="modelo" type="text" class="form-control" placeholder="Modelo del Renta" required />
+                  <input name="fechaInicio" type="text" class="form-control" placeholder="Ingrese la fecha de Inicio" required />
                 </div>
               </div>
               <div class="row mb-3">
-                <label for="color" class="col-sm-3 col-form-label text-sm-end">Color</label>
+                <label for="fechaFin" class="col-sm-3 col-form-label text-sm-end">Fecha Final</label>
                 <div class="col-sm-9">
-                  <input name="color" type="text" class="form-control" placeholder="Color del Renta" required/>
+                  <input name="fechaFin" type="text" class="form-control" placeholder="Ingrese la fecha final" required/>
                 </div>
               </div>
               <div class="row mb-3">
@@ -126,13 +125,13 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <img src="{{ asset('assets/img/vehicles/Civic.png') }}" alt="Imagen 2" width="200" class="mx-auto d-block">
-          <div class="col-5 text-left">
+          <div class="col-5 text-left py-3">
             <th>Nombre: Juan</th>
             <p>Vehiculo: Honda Civic</p>
-            <p>Fecha_inicio: 2023-01-01</p>
-            <p>Fecha_fin: 2023-01-31</p>
+            <p>Fecha Inicial: 2023-01-01</p>
+            <p>Fecha Final: 2023-01-31</p>
             <p>Deposito: $500 </p>
+            <p>Estado:</p>
           </div>
         </div>
         <div class="modal-footer">
@@ -172,21 +171,27 @@
 
             <div class="card-body">
               <div class="row mb-3">
-                <label class="col-sm-3 col-form-label text-sm-end">Placa</label>
+                <label class="col-sm-3 col-form-label text-sm-end">Nombre</label>
                 <div class="col-sm-9">
-                  <input type="text" name="placa" class="form-control" placeholder="Placa del Renta" />
+                  <input type="text" name="nombre" class="form-control"/>
                 </div>
               </div>
               <div class="row mb-3">
-                <label for="modelo" class="col-sm-3 col-form-label text-sm-end">Modelo</label>
+                <label for="fechaFin" class="col-sm-3 col-form-label text-sm-end">Fecha de inicio</label>
                 <div class="col-sm-9">
-                  <input name="modelo" type="text" class="form-control" placeholder="Modelo del Renta" />
+                  <input name="fechaFin" type="text" class="form-control"/>
                 </div>
               </div>
               <div class="row mb-3">
-                <label for="color" class="col-sm-3 col-form-label text-sm-end">Color</label>
+                <label for="fechaFin" class="col-sm-3 col-form-label text-sm-end">Fecha de Finalización</label>
                 <div class="col-sm-9">
-                  <input name="color" type="text" class="form-control" placeholder="Color del Renta" />
+                  <input name="fechaFin" type="text" class="form-control"/>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="deposito" class="col-sm-3 col-form-label text-sm-end">Deposito</label>
+                <div class="col-sm-9">
+                  <input name="deposito" type="text" class="form-control"/>
                 </div>
               </div>
               <div class="row mb-3">
@@ -208,7 +213,6 @@
       </div>
     </div>
   </div>
-  <!----------------------------------------------------------end Modal edicion------------------------------------------------------->
   @include('scripts')
 </body>
 

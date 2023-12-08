@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact " dir="ltr"
-    data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template">
+<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact " dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template">
 @include('head')
 <title>CarRental</title>
+
 <body>
     <div class="layout-wrapper layout-content-navbar  ">
         <div class="layout-container">
@@ -15,8 +15,7 @@
 
                         <h4 class="py-3 mb-4">
                             <span class="text-muted fw-light">Panel de Usuarios</span>
-                            <button type="button" class="btn btn-success float-end me-sm-2 me-1" data-bs-toggle="modal"
-                                data-bs-target="#agregarUsuarioModal"><i class="ti ti-plus"></i></button>
+                            <button type="button" class="btn btn-success float-end me-sm-2 me-1" data-bs-toggle="modal" data-bs-target="#agregarUsuarioModal"><i class="ti ti-plus"></i></button>
                         </h4>
                         @if (session("correcto"))
                         <div class="alert alert-success">{{session("correcto")}}</div>
@@ -50,27 +49,24 @@
                                             <td>{{$item->email}}</td>
                                             <td>
                                                 <div class="dropdown">
-                                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                                        data-bs-toggle="dropdown">
+                                                    <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                                                         <i class="ti ti-dots-vertical"></i>
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                            data-bs-target="#consultaUsuario">
+                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#consultaUsuario{{$item->id}}">
                                                             <i class="menu-icon tf-icons ti ti-file-description"></i>
                                                             Consultar
                                                         </a>
-                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                            data-bs-target="#editarUsuario" >
+                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editarUsuario{{$item->id}}">
                                                             <i class="ti ti-pencil me-2"></i> Editar
                                                         </a>
-                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                            data-bs-target="#eliminarUsuarioModal">
+                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#eliminarUsuarioModal{{$item->id}}">
                                                             <i class="ti ti-trash me-2"></i> Eliminar
                                                         </a>
                                                     </div>
                                                 </div>
                                             </td>
+
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -83,10 +79,8 @@
             </div>
         </div>
     </div>
-    </div>
     <!------------------------------------------------------Modal de Agregar Usuario--------------------------------------------------->
-    <div class="modal fade" id="agregarUsuarioModal" tabindex="-1" data-bs-backdrop="static" role="dialog"
-        aria-labelledby="agregarUsuarioModalLabel" aria-hidden="true">
+    <div class="modal fade" id="agregarUsuarioModal" tabindex="-1" data-bs-backdrop="static" role="dialog" aria-labelledby="agregarUsuarioModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -94,49 +88,43 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form  method="POST" action="{{ route("users") }}" class="form-inline" enctype=multipart/form-data>
-                    @csrf
+                    <form method="POST" action="{{ route("users.create") }}" class="form-inline" enctype=multipart/form-data>
+                        @csrf
                         <div class="card-body">
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label text-sm-end">Nombre</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="name" class="form-control" placeholder="Nombre" required />
+                                    <input type="text" name="name" class="form-control" placeholder="Nombre" minlength="3" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Ingrese solo letras" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="PrimerApellido" class="col-sm-3 col-form-label text-sm-end">Primer Apellido</label>
                                 <div class="col-sm-9">
-                                    <input name="first_name" type="text" class="form-control"
-                                        placeholder="Primer Apellido" required />
+                                    <input name="first_name" type="text" class="form-control" placeholder="Primer Apellido" minlength="3" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Ingrese solo letras" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="SegundoApellido"
-                                    class="col-sm-3 col-form-label text-sm-end">SegundoApellido</label>
+                                <label for="SegundoApellido" class="col-sm-3 col-form-label text-sm-end">SegundoApellido</label>
                                 <div class="col-sm-9">
-                                    <input name="last_name" type="text" class="form-control"
-                                        placeholder="Segundo Apellido" required  />
+                                    <input name="last_name" type="text" class="form-control" placeholder="Segundo Apellido" minlength="3" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Ingrese solo letras" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="Modelo" class="col-sm-3 col-form-label text-sm-end">Telefóno</label>
                                 <div class="col-sm-9">
-                                    <input name="phone" type="text" class="form-control" placeholder="Telefóno"
-                                        required />
+                                    <input name="phone" type="tel" class="form-control" placeholder="Telefóno"  pattern="[0-9]{10}" title="Ingrese un número de 10 dígitos" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="Email" class="col-sm-3 col-form-label text-sm-end">Email</label>
                                 <div class="col-sm-9">
-                                    <input name="email" type="text" class="form-control" placeholder="Email"
-                                        required />
+                                    <input name="email" type="email" class="form-control" placeholder="Email" minlength="3" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="Contraseña" class="col-sm-3 col-form-label text-sm-end">Contraseña</label>
                                 <div class="col-sm-9">
-                                    <input name="password" type="password" class="form-control" placeholder="Contraseña"
-                                        required />
+                                    <input name="password" type="password" class="form-control" placeholder="Contraseña" minlength="3" required />
                                 </div>
                             </div>
                         </div>
@@ -149,9 +137,10 @@
             </div>
         </div>
     </div>
+    
+    @foreach($datos as $item)
     <!-------------------------------------------------------Modal-consulta------------------------------------------------------------->
-    <div class="modal fade" id="consultaUsuario" tabindex="-1" role="dialog" data-bs-backdrop="static"
-        aria-labelledby="consulta-Usuario" aria-hidden="true">
+    <div class="modal fade" id="consultaUsuario{{$item->id}}" tabindex="-1" role="dialog" data-bs-backdrop="static" aria-labelledby="consulta-Usuario" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -159,15 +148,14 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="{{ asset('assets/img/avatars/1.png') }}" alt="Imagen 2" width="200"
-                        class="mx-auto d-block">
+                    <img src="{{ asset('assets/img/avatars/1.png') }}" alt="Imagen 6" width="200" class="mx-auto d-block">
                     <div class="col-7 text-left">
-                        <p>Nombre: Juan </p>
-                        <p>Primer Apellido: Pérez </p>
-                        <p>Segundo Apellido: Gómez </p>
-                        <p>Teléfono: 612-188-1964 </p>
-                        <p>Email: juan@gmail.com </p>
-                        <p type="password">Contraseña : 1234</p>
+                        <p>Nombre: {{$item->name}}</p>
+                        <p>Primer Apellido: {{$item->first_name}}</p>
+                        <p>Segundo Apellido: {{$item->last_name}}</p>
+                        <p>Teléfono: {{$item->phone}}</p>
+                        <p>Email: {{$item->email}}</p>
+                        <p type="password">Contraseña: {{$item->password}}</p>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -176,9 +164,10 @@
             </div>
         </div>
     </div>
+    @endforeach
     <!--------------------------------------------------------Modal de eliminación------------------------------------------------------>
-    <div class="modal fade" id="eliminarUsuarioModal" tabindex="-1" role="dialog"
-        aria-labelledby="eliminarUsuarioModalLabel" aria-hidden="true">
+    @foreach($datos as $item)
+    <div class="modal fade" id="eliminarUsuarioModal{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="eliminarUsuarioModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -190,14 +179,15 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <a href="{{route("users", $item->id)}}" type="button" class="btn btn-danger" data-bs-dismiss="modal">Eliminar</a>
+                    <a href="{{ route("users.delete", $item->id) }}" class="btn btn-danger">Eliminar</a>
                 </div>
             </div>
         </div>
     </div>
+    @endforeach
     <!-------------------------------------------------------Modal de edición----------------------------------------------------------->
-    <div class="modal fade" id="editarUsuario" tabindex="-1" role="dialog" aria-labelledby="editarUsuarioModalLabel"
-        aria-hidden="true">
+    @foreach($datos as $item)
+    <div class="modal fade" id="editarUsuario{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="editarUsuarioModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -205,28 +195,33 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form  method="POST" action="{{ route("users") }}" class="form-inline">
-                    @csrf
+                    <form method="POST" action="{{ route("users.update") }}" class="form-inline">
+                        @csrf
+                        <input type="hidden" name="id" value="{{$item->id}}">
                         <div class="card-body">
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label text-sm-end">ID</label>
+                                <div class="col-sm-9">
+                                    <input type="number" name="id" class="form-control" value="{{$item->id}}" readonly />
+                                </div>
+                            </div>
                             <div class="row mb-3">
                                 <label for="name" class="col-sm-3 col-form-label text-sm-end">Nombre</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="name" class="form-control"
-                                        placeholder="Nombre del Usuario" value="{{$item->name}}" required />
+                                    <input type="text" name="name" class="form-control" placeholder="Nombre del Usuario" value="{{$item->name}}" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="first_name" class="col-sm-3 col-form-label text-sm-end">PrimerApellido</label>
                                 <div class="col-sm-9">
-                                    <input name="first_name" type="text" class="form-control"
-                                        placeholder="Primer Apellido del Usuario" value="{{$item->first_name}}"  required />
+                                    <input name="first_name" type="text" class="form-control" placeholder="Primer Apellido del Usuario" value="{{$item->first_name}}" required />
+
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="last_name" class="col-sm-3 col-form-label text-sm-end">SegundoApellido</label>
                                 <div class="col-sm-9">
-                                    <input name="last_name" type="text" class="form-control"
-                                        placeholder="Segundo Apellido del Usuario" value="{{$item->last_name}}"  required />
+                                    <input name="last_name" type="text" class="form-control" placeholder="Segundo Apellido del Usuario" value="{{$item->last_name}}" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -244,7 +239,7 @@
                             <div class="row mb-3">
                                 <label for="password" class="col-sm-3 col-form-label text-sm-end">Contraseña</label>
                                 <div class="col-sm-9">
-                                    <input name="password" type="password" class="form-control" placeholder="Contraseña" value="{{$item->password}}"  required />
+                                    <input name="password" type="password" class="form-control" placeholder="Contraseña" value="{{$item->password}}" required />
                                 </div>
                             </div>
                         </div>
@@ -257,7 +252,7 @@
             </div>
         </div>
     </div>
-    <!----------------------------------------------------------end Modal edicion------------------------------------------------------->
+    @endforeach
     @include('scripts')
 </body>
 

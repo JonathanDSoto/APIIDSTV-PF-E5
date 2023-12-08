@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 class CustomerController extends Controller
 {
 
-   public function create(){
+   public function index(){
         $datos=DB::select("select * from customer");
         return view("customers")->with("datos", $datos);
     }
