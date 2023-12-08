@@ -15,11 +15,11 @@ class VehicleController extends Controller
     public function add(Request $request)
     {
         try {
-            $sql = DB::insert(" insert into vehicle(img,lisense_plate,model,color,aviavle)values(?,?,?,?,?) ", [
-                $request->img,
+            $sql = DB::insert(" insert into vehicle(lisense_plate,brand,color,category,aviavle)values(?,?,?,?,?) ", [
                 $request->lisense_plate,
-                $request->model,
+                $request->brand,
                 $request->color,
+                $request->category,
                 $request->aviavle,
             ]);
         } catch (\Throwable $th) {

@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create('vehicle', function (Blueprint $table) {
             $table->id();
-            $table->string('img');
             $table->string('lisense_plate');
-            $table->string('model');
             $table->string('brand');
+            $table->string('category');
             $table->string('color');
-            $table->boolean('aviavle');
+            $table->string('aviavle');
         });
     }
 

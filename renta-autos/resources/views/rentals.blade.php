@@ -22,7 +22,7 @@
                       <th>Nombre</th>
                       <th>Fecha_inicio</th>
                       <th>Fecha_fin</th>
-                      <th>Deposito</th>
+                      <th>Tarifa</th>
                       <th>Estado</th>
                       <th>Acciones</th>
                     </tr>
@@ -34,7 +34,7 @@
                       <td>{{$item->name}}</td>
                       <td>{{$item->start_date}}</td>
                       <td>{{$item->end_date}}</td>
-                      <td>${{$item->deposit}}</td>
+                      <td>${{$item->rate}}</td>
                       <td>{{$item->aviavle}}</td>
                       <td>
                         <div class="dropdown">
@@ -42,10 +42,6 @@
                             <i class="ti ti-dots-vertical"></i>
                           </button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#consultaRenta">
-                              <i class="menu-icon tf-icons ti ti-file-description"></i>
-                              Consultar
-                            </a>
                             <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editarRenta">
                               <i class="ti ti-pencil me-2"></i> Editar
                             </a>
@@ -116,30 +112,6 @@
       </div>
     </div>
   </div>
-  <!-------------------------------------------------------Modal-consulta------------------------------------------------------------->
-  <div class="modal fade" id="consultaRenta" tabindex="-1" role="dialog" data-bs-backdrop="static" aria-labelledby="consulta-Renta" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="consulta-Renta">Detalles del Renta</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="col-5 text-left py-3">
-            <th>Nombre: Juan</th>
-            <p>Vehiculo: Honda Civic</p>
-            <p>Fecha Inicial: 2023-01-01</p>
-            <p>Fecha Final: 2023-01-31</p>
-            <p>Deposito: $500 </p>
-            <p>Estado:</p>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
-    </div>
-  </div>
   <!--------------------------------------------------------Modal de eliminación------------------------------------------------------>
   <div class="modal fade" id="eliminarRentaModal" tabindex="-1" role="dialog" aria-labelledby="eliminarRentaModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -189,9 +161,9 @@
                 </div>
               </div>
               <div class="row mb-3">
-                <label for="deposito" class="col-sm-3 col-form-label text-sm-end">Deposito</label>
+                <label for="tarifa" class="col-sm-3 col-form-label text-sm-end">Tarifa</label>
                 <div class="col-sm-9">
-                  <input name="deposito" type="text" class="form-control"/>
+                  <input name="tarifa" type="text" class="form-control"/>
                 </div>
               </div>
               <div class="row mb-3">

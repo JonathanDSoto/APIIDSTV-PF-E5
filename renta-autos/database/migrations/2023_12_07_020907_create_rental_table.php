@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->date('start_date');
             $table->date('end_date');
-            $table->float('deposit');
-            $table->boolean('aviavle');
+            $table->float('rate');
+            $table->string('aviavle');
         });
     }
 

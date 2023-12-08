@@ -88,7 +88,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" action="{{ route("users.create") }}" class="form-inline" enctype=multipart/form-data>
+                    <form method="POST" action="{{ route('users.create')}}" class="form-inline" enctype=multipart/form-data>
                         @csrf
                         <div class="card-body">
                             <div class="row mb-3">
@@ -179,7 +179,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <a href="{{ route("users.delete", $item->id) }}" class="btn btn-danger">Eliminar</a>
+                    <a href="{{ route("users.delete", $item->id)}}" class="btn btn-danger">Eliminar</a>
                 </div>
             </div>
         </div>
