@@ -34,7 +34,7 @@
                                             <th>Primer Apellido</th>
                                             <th>Segundo Apellido</th>
                                             <th>Teléfono</th>
-                                            <th>Email</th>
+                                            <th>Correo electrónico</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
@@ -94,37 +94,37 @@
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label text-sm-end">Nombre</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="name" class="form-control" placeholder="Nombre" minlength="3" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Ingrese solo letras" required />
+                                    <input type="text" name="name" class="form-control" placeholder="Ingrese el nombre" minlength="3" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Ingrese solo letras" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="PrimerApellido" class="col-sm-3 col-form-label text-sm-end">Primer Apellido</label>
                                 <div class="col-sm-9">
-                                    <input name="first_name" type="text" class="form-control" placeholder="Primer Apellido" minlength="3" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Ingrese solo letras" required />
+                                    <input name="first_name" type="text" class="form-control" placeholder="Ingrese el primer apellido" minlength="3" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Ingrese solo letras" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="SegundoApellido" class="col-sm-3 col-form-label text-sm-end">SegundoApellido</label>
+                                <label for="SegundoApellido" class="col-sm-3 col-form-label text-sm-end">Segundo Apellido</label>
                                 <div class="col-sm-9">
-                                    <input name="last_name" type="text" class="form-control" placeholder="Segundo Apellido" minlength="3" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Ingrese solo letras" required />
+                                    <input name="last_name" type="text" class="form-control" placeholder="Ingrese el segundo apellido" minlength="3" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Ingrese solo letras" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="Modelo" class="col-sm-3 col-form-label text-sm-end">Telefóno</label>
                                 <div class="col-sm-9">
-                                    <input name="phone" type="tel" class="form-control" placeholder="Telefóno"  pattern="[0-9]{10}" title="Ingrese un número de 10 dígitos" required />
+                                    <input name="phone" type="tel" class="form-control" placeholder="Ingrese el telefóno"  pattern="[0-9]{10}" title="Ingrese un número de 10 dígitos" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="Email" class="col-sm-3 col-form-label text-sm-end">Email</label>
+                                <label for="Email" class="col-sm-3 col-form-label text-sm-end">Correo electrónico</label>
                                 <div class="col-sm-9">
-                                    <input name="email" type="email" class="form-control" placeholder="Email" minlength="3" required />
+                                    <input name="email" type="email" class="form-control" placeholder="Ingrese el correo electrónico" minlength="3" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="Contraseña" class="col-sm-3 col-form-label text-sm-end">Contraseña</label>
                                 <div class="col-sm-9">
-                                    <input name="password" type="password" class="form-control" placeholder="Contraseña" minlength="3" required />
+                                    <input name="password" type="password" class="form-control" placeholder="Ingrese la contraseña" minlength="3" required />
                                 </div>
                             </div>
                         </div>
@@ -154,7 +154,7 @@
                         <p>Primer Apellido: {{$item->first_name}}</p>
                         <p>Segundo Apellido: {{$item->last_name}}</p>
                         <p>Teléfono: {{$item->phone}}</p>
-                        <p>Email: {{$item->email}}</p>
+                        <p>Correo electrónico: {{$item->email}}</p>
                         <p type="password">Contraseña: {{$item->password}}</p>
                     </div>
                 </div>
@@ -208,38 +208,38 @@
                             <div class="row mb-3">
                                 <label for="name" class="col-sm-3 col-form-label text-sm-end">Nombre</label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="name" class="form-control" placeholder="Nombre del Usuario" value="{{$item->name}}" required />
+                                    <input type="text" name="name" class="form-control" placeholder="Nombre del usuario" value="{{$item->name}}" minlength="3" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Ingrese solo letras" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="first_name" class="col-sm-3 col-form-label text-sm-end">PrimerApellido</label>
+                                <label for="first_name" class="col-sm-3 col-form-label text-sm-end">Primer Apellido</label>
                                 <div class="col-sm-9">
-                                    <input name="first_name" type="text" class="form-control" placeholder="Primer Apellido del Usuario" value="{{$item->first_name}}" required />
+                                    <input name="first_name" type="text" class="form-control" placeholder="Primer apellido del usuario" value="{{$item->first_name}}" minlength="3" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Ingrese solo letras" required />
 
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="last_name" class="col-sm-3 col-form-label text-sm-end">SegundoApellido</label>
+                                <label for="last_name" class="col-sm-3 col-form-label text-sm-end">Segundo Apellido</label>
                                 <div class="col-sm-9">
-                                    <input name="last_name" type="text" class="form-control" placeholder="Segundo Apellido del Usuario" value="{{$item->last_name}}" required />
+                                    <input name="last_name" type="text" class="form-control" placeholder="Segundo apellido del usuario" value="{{$item->last_name}}" minlength="3" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Ingrese solo letras" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="phone" class="col-sm-3 col-form-label text-sm-end">Telefóno</label>
                                 <div class="col-sm-9">
-                                    <input name="phone" type="text" class="form-control" placeholder="Telefóno" value="{{$item->phone}}" required />
+                                    <input name="phone" type="tel" class="form-control" placeholder="Telefóno del usuario" value="{{$item->phone}}"  pattern="[0-9]{10}" title="Ingrese un número de 10 dígitos" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="email" class="col-sm-3 col-form-label text-sm-end">Email</label>
+                                <label for="email" class="col-sm-3 col-form-label text-sm-end">Correo electrónico</label>
                                 <div class="col-sm-9">
-                                    <input name="email" type="text" class="form-control" placeholder="Email" value="{{$item->email}}" required />
+                                    <input name="email" type="email" class="form-control" placeholder="Correo electrónico del usuario" value="{{$item->email}}" minlength="3" required />
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="password" class="col-sm-3 col-form-label text-sm-end">Contraseña</label>
                                 <div class="col-sm-9">
-                                    <input name="password" type="password" class="form-control" placeholder="Contraseña" value="{{$item->password}}" required />
+                                    <input name="password" type="password" class="form-control" placeholder="Contraseña del usuario" value="{{$item->password}}" minlength="3" required />
                                 </div>
                             </div>
                         </div>

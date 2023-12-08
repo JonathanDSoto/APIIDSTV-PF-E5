@@ -10,52 +10,46 @@ use App\Http\Controllers\RentalController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 
-
+// Login
 Route::get('/',[SessionsController::class , 'index'])->name('login');
 
 
-
+// Usuarios
 Route::get('/users',[UserController::class , 'index'])->name('users');
-
-
-
 // Ruta para añadir un nuevo usuario
 Route::post('/register-users',[UserController::class , 'add'])->name('users.create');
-
-
-
 // Ruta para editar un usuario
 Route::post('/update-users',[UserController::class , 'update'])->name('users.update');
-
-
-
 // Ruta para eliminar un usuario
 Route::get('/delete-users-{id}',[UserController::class , 'delete'])->name('users.delete');
 
 
-
+// Clientes
 Route::get('/customers',[CustomerController::class , 'index'])->name('customers');
+// Ruta para añadir un nuevo cliente
+Route::post('/register-customers',[CustomerController::class , 'add'])->name('customers.create');
+// Ruta para editar un cliente
+Route::post('/update-customers',[CustomerController::class , 'update'])->name('customers.update');
+// Ruta para eliminar un cliente
+Route::get('/delete-customers-{id}',[CustomerController::class , 'delete'])->name('customers.delete');
 
 
 
+// Vehiculos
 Route::get('/vehicles',[VehicleController::class , 'index'])->name('vehicles');
-
-
-
 // Ruta para añadir un nuevo vehiculo
 Route::post('/register-vehicles',[VehicleController::class , 'add'])->name('vehicles.create');
 
 
-
-
+// Rentas
 Route::get('/rentals',[RentalController::class , 'index'])->name('rentals');
 
 
-
+// Marcas
 Route::get('/brands',[BrandController::class , 'index'])->name('brands');
 
 
-
+// Categorias
 Route::get('/categories',[CategoryController::class , 'index'])->name('categories');
 
 
