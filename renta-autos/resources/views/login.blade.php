@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="light-style layout-wide  customizer-hide" dir="ltr" data-theme="theme-default" data-assets-path="assets/" data-template="vertical-menu-template">
 
@@ -41,20 +42,19 @@
           <div class="mb-3 text-center py-3">
             <img src="{{ asset('assets/img/icons/icono-Car-Rental.png')}}" alt="Car Rental" width="250" height="125">
           </div>
-          <h3 class="mb-3">¡Bienvenido a nuestro servicio de alquiler de automóviles! </h3>
+          <h3 class="mb-3">¡Bienvenido a nuestro servicio de alquiler de automóviles! 👋</h3>
 
-          <form method="POST" action="{{ route('login.post') }}" id="formAuthentication" class="mb-3" >
-          @csrf 
+          <form id="formAuthentication" class="mb-3" action="">
             <div class="mb-2">
-              <label for="email" class="form-label">Correo electrónico</label>
-              <input type="text" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico"  value="{{ old('email') }}" autofocus>
+              <label for="email" class="form-label">Correo lectrónico</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico" autofocus>
             </div>
             <div class="mb-3 form-password-toggle">
               <div class="d-flex justify-content-between">
                 <label class="form-label" for="password">Contraseña</label>
               </div>
               <div class="input-group input-group-merge">
-                <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" value="{{ old('password') }}" />
+                <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
                 <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
               </div>
             </div>
@@ -66,12 +66,29 @@
                 </label>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary d-grid w-100">Login</button>
+            <a class="btn btn-primary d-grid w-100"  onclick="validateAndSubmit()">Login</a>
           </form>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    function validateAndSubmit() {
+        var fixedEmail = 'test@gmail.com';
+        var fixedPassword = '123';
+
+        var enteredEmail = document.getElementById('email').value;
+        var enteredPassword = document.getElementById('password').value;
+
+        // Validar si los valores son correctos
+        if (enteredEmail === fixedEmail && enteredPassword === fixedPassword) {
+            window.location.href = "{{ route('customers') }}";
+        } else {
+            alert('Correo electrónico o contraseña incorrectos');
+        }
+    }
+  </script>
 
   <script src="assets/vendor/libs/jquery/jquery.js"></script>
   <script src="assets/vendor/libs/popper/popper.js"></script>

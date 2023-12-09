@@ -48,10 +48,10 @@ class VehicleController extends Controller
         } catch (\Throwable $th) {
             $sql = 0;
         }
-        if ($sql == true) {
+        if ($sql > 0) {
             return back()->with("correcto","¡Datos de vehículo editados correctamente!");
         } else {
-            return back() ->with("incorrecto","Error al editar un vehículo, por favor verifique la información.");
+            return back()->with("incorrecto","Error al editar un vehículo, por favor verifique la información.");
         }
         
        

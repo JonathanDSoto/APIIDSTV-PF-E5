@@ -10,15 +10,9 @@ use App\Http\Controllers\RentalController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 
-// Login
-Route::get('/',[SessionsController::class , 'index'])->name('login');
-Route::post('/login',[SessionsController::class , 'login'])->name('login.post');
 
-
-
-// Logout
-Route::post('/logout', [SessionsController::class, 'logout'])->name('logout');
-
+// Ruta para mostrar el formulario de login
+Route::get('/', [SessionsController::class, 'index'])->name('login');
 
 
 // Usuarios
