@@ -56,11 +56,11 @@ Route::get('/delete-vehicles-{id}',[VehicleController::class , 'delete'])->name(
 // Rentas
 Route::get('/rentals',[RentalController::class , 'index'])->name('rentals');
 // Ruta para añadir una nueva renta
-Route::post('/register-customers',[CustomerController::class , 'add'])->name('customers.create');
+Route::post('/register-rentals',[RentalController::class , 'add'])->name('rentals.create');
 // Ruta para editar una renta
-Route::post('/update-customers',[CustomerController::class , 'update'])->name('customers.update');
+Route::post('/update-rentals',[RentalController::class , 'update'])->name('rentals.update');
 // Ruta para eliminar una renta
-Route::get('/delete-customers-{id}',[CustomerController::class , 'delete'])->name('customers.delete');
+Route::get('/delete-rentals-{id}',[RentalController::class , 'delete'])->name('rentals.delete');
 
 
 // Marcas

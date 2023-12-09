@@ -87,7 +87,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form method="POST" action="{{ route("vehicles.create") }}" class="form-inline" enctype=multipart/form-data>
+          <form method="POST" action="{{ route('vehicles.create')}}" class="form-inline" enctype=multipart/form-data>
             @csrf
             <div class="card-body">
               <div class="row mb-3">
@@ -198,7 +198,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form method="POST" action="{{ route("vehicles.update") }}" class="form-inline">
+          <form  method="POST" action="{{ route('vehicles.update')}}" class="form-inline">
             @csrf
             <input type="hidden" name="id" value="{{$item->id}}">
             <div class="card-body">
@@ -236,8 +236,8 @@
                 <label for="aviavle" class="col-sm-3 col-form-label text-sm-end">Estado</label>
                 <div class="col-sm-9">
                   <select name="aviavle" class="form-select">
-                    <option value="Disponible" {{$item->aviavle == 'disponible' ? 'selected' : ''}}>Disponible</option>
-                    <option value="Ocupado" {{$item->aviavle == 'ocupado' ? 'selected' : ''}}>Ocupado</option>
+                    <option value="Disponible" {{$item->aviavle == 'Disponible' ? 'selected' : ''}}>Disponible</option>
+                    <option value="Ocupado" {{$item->aviavle == 'Ocupado' ? 'selected' : ''}}>Ocupado</option>
                   </select>
                 </div>
               </div>
