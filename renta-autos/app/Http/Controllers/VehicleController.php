@@ -37,7 +37,7 @@ class VehicleController extends Controller
     public function update(Request $request)
     {
         try {
-            $sql = DB::update(" update vehicle set lisense_plate=?,brand=?,catgory=?,color=?,aviavle=? where id=? ", [
+            $sql = DB::update("UPDATE vehicle SET lisense_plate=?, brand=?, category=?, color=?, aviavle=? WHERE id=?", [
                 $request->lisense_plate,
                 $request->brand,
                 $request->category,
@@ -48,13 +48,12 @@ class VehicleController extends Controller
         } catch (\Throwable $th) {
             $sql = 0;
         }
+    
         if ($sql > 0) {
-            return back()->with("correcto","¡Datos de vehículo editados correctamente!");
+            return back()->with("correcto", "¡Datos de vehículo editados correctamente!");
         } else {
-            return back()->with("incorrecto","Error al editar un vehículo, por favor verifique la información.");
+            return back()->with("incorrecto", "Error al editar un vehículo, por favor verifique la información.");
         }
-        
-       
     }
 
     public function delete($id)

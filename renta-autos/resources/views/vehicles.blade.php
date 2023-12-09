@@ -91,7 +91,7 @@
             @csrf
             <div class="card-body">
               <div class="row mb-3">
-                <label for="lisense_plate" class="col-sm-3 col-form-label text-sm-end">Placa</label>
+                <label for="lisense_plate" class="col-sm-3 col-form-label text-sm-end" for="lisense_plate" >Placa</label>
                 <div class="col-sm-9">
                   <input type="text" name="lisense_plate" class="form-control" placeholder="Placa del Vehículo" minlength="6" required />
                 </div>
@@ -209,7 +209,7 @@
                 </div>
               </div>
               <div class="row mb-3">
-                <label class="col-sm-3 col-form-label text-sm-end">Placa</label>
+                <label class="col-sm-3 col-form-label text-sm-end" for="lisense_plate">Placa</label>
                 <div class="col-sm-9">
                   <input type="text" name="lisense_plate" class="form-control" value="{{$item->lisense_plate}}" minlength="6" required />
                 </div>
